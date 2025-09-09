@@ -1,4 +1,6 @@
 :root {
+  --kbms-container-max: 1100px;
+  --kbms-hpad: clamp(16px, 5vw, 28px);
   --kbms-brand-1: #0d5e2a; /* hijau tua */
   --kbms-brand-2: #15803d; /* hijau terang (gradasi) */
   --kbms-accent: #ffd54f; /* kuning aksen */
@@ -51,10 +53,14 @@ a {
   text-decoration: none;
 }
 .kbms-container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
+  max-width: var(--kbms-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--kbms-hpad);
+  padding-right: var(--kbms-hpad);
+  box-sizing: border-box;
 }
+
 .kbms-card {
   background: var(--kbms-white);
   border-radius: var(--kbms-radius);
@@ -445,7 +451,10 @@ a {
 
  /* Mobile (<= 720px) */
 @media (max-width: 720px) {
-
+   .kbms-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
   .kbms-brand {
     display: flex;
     align-items: center;
