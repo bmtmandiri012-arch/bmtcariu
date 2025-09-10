@@ -394,6 +394,9 @@ a {
 .skip-link:focus {
   top: 10px; /* Muncul saat difokuskan (tab keyboard) */
 }
+.persyaratan-pembiayaan {
+  display: none; /* semua box persyaratan tersembunyi saat halaman dibuka */
+}
 
 /* =========================================================
     RESPONSIVE HEADER
