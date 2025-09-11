@@ -111,7 +111,10 @@
   ">
                   Cara Buka Rekening
                 </button>
-                <button type="button" class="tabungan-btn--ghost" onclick="document.getElementById('selengkapnya-sing-berkah').open = !document.getElementById('selengkapnya-sing-berkah').open;">Selengkapnya</button>
+                 <button type="button" class="tabungan-btn--ghost"
+        onclick="const det = document.getElementById('selengkapnya-singberkah');
+                 det.open = !det.open;
+                 this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
               </div>
             </div>
           </article>
@@ -169,9 +172,10 @@
                  box.style.display = box.style.display === 'block' ? 'none' : 'block';">
         Pilih Paket
       </button>
-      <button type="button" class="tabungan-btn--ghost" 
-        onclick="document.getElementById('selengkapnya-lebaran').open = 
-                 !document.getElementById('selengkapnya-lebaran').open;">
+       <button type="button" class="tabungan-btn--ghost"
+        onclick="const det = document.getElementById('selengkapnya-lebaran');
+                 det.open = !det.open;
+                 this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
         Selengkapnya
       </button>
     </div>
@@ -231,21 +235,14 @@
                  box.style.display = box.style.display === 'block' ? 'none' : 'block';">
         Mulai Menabung
       </button>
-      <button type="button" class="tabungan-btn--ghost"
-        onclick="document.getElementById('selengkapnya-pendidikan').open = 
-                 !document.getElementById('selengkapnya-pendidikan').open;">
-        Selengkapnya
-      </button>
+       <button type="button" class="tabungan-btn--ghost"
+        onclick="const det = document.getElementById('selengkapnya-pendidikan');
+                 det.open = !det.open;
+                 this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
     </div>
   </div>
 </article>
-          <article class="tabungan-card" role="listitem" aria-labelledby="t-qurban">
-  <div class="tabungan-media">
-    <img src="https://images.unsplash.com/photo-1603642633278-9a2b4b3c7f0d?w=1200&auto=format&fit=crop&q=60" 
-         alt="Ilustrasi tabungan qurban" 
-         loading="lazy" 
-         class="tabungan-img">
-  </div>
+    
  <article class="tabungan-card" role="listitem" aria-labelledby="t-qurban">
   <div class="tabungan-media">
     <img src="https://images.unsplash.com/photo-1603642633278-9a2b4b3c7f0d?w=1200&auto=format&fit=crop&q=60" 
