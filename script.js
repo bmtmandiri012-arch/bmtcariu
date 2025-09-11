@@ -109,7 +109,119 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
-
+// Script untuk jam operasional
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fungsi untuk memperbarui waktu dan tanggal
+      function updateDateTime() {
+        const now = new Date();
+        const timeElement = document.getElementById('current-time');
+        const dateElement = document.getElementById('current-date');
+        // Format waktu
+        const timeString = now.toLocaleTimeString('id-ID');
+        timeElement.textContent = timeString;
+        // Format tanggal
+        const options = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        };
+        const dateString = now.toLocaleDateString('id-ID', options);
+        dateElement.textContent = dateString;
+        // Periksa status buka/tutup
+        checkBusinessHours(now);
+      }
+      // Fungsi untuk memeriksa jam operasional
+      function checkBusinessHours(now) {
+        const statusElement = document.getElementById('status-indicator');
+        const day = now.getDay(); // 0 = Minggu, 1 = Senin, ..., 6 = Sabtu
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        // Konversi ke menit untuk memudahkan perbandingan
+        const currentTimeInMinutes = hours * 60 + minutes;
+        let status = 'closed';
+        let statusText = 'Tutup';
+        let statusDescription = '';
+        if (day >= 1 && day <= 5) { // Senin - Jumat
+          // Pagi: 08:00 - 12:00
+          const morningOpen = 8 * 60; // 08:00
+          const morningClose = 12 * 60; // 12:00
+          // Siang: 13:00 - 16:00
+          const afternoonOpen = 13 * 60; // 13:00
+          const afternoonClose = 16 * 60; // 16:00
+          if (currentTimeInMinutes >= morningOpen && currentTimeInMinutes <= morningClose) {
+            status = 'open';
+            statusText = 'Buka';
+            const closingTime = new Date(now);
+            closingTime.setHours(12, 0, 0, 0);
+            statusDescription = 'Buka hingga ' + closingTime.toLocaleTimeString('id-ID', {
+              hour: '2-digit',
+              minute: '2-digit'
+            });
+          } else if (currentTimeInMinutes >= afternoonOpen && currentTimeInMinutes <= afternoonClose) {
+            status = 'open';
+            statusText = 'Buka';
+            const closingTime = new Date(now);
+            closingTime.setHours(16, 0, 0, 0);
+            statusDescription = 'Buka hingga ' + closingTime.toLocaleTimeString('id-ID', {
+              hour: '2-digit',
+              minute: '2-digit'
+            });
+          } else if (currentTimeInMinutes > morningClose && currentTimeInMinutes < afternoonOpen) {
+            status = 'break';
+            statusText = 'Istirahat';
+            const openingTime = new Date(now);
+            openingTime.setHours(13, 0, 0, 0);
+            statusDescription = 'Buka kembali ' + openingTime.toLocaleTimeString('id-ID', {
+              hour: '2-digit',
+              minute: '2-digit'
+            });
+          } else {
+            statusDescription = 'Buka besok 08:00';
+          }
+        } else if (day === 6) { // Sabtu
+          const openTime = 8 * 60; // 08:00
+          const closeTime = 12 * 60 + 30; // 12:30
+          if (currentTimeInMinutes >= openTime && currentTimeInMinutes <= closeTime) {
+            status = 'open';
+            statusText = 'Buka';
+            const closingTime = new Date(now);
+            closingTime.setHours(12, 30, 0, 0);
+            statusDescription = 'Buka hingga ' + closingTime.toLocaleTimeString('id-ID', {
+              hour: '2-digit',
+              minute: '2-digit'
+            });
+          } else {
+            statusDescription = 'Buka Senin 08:00';
+          }
+        } else if (day === 0) { // Minggu
+          statusDescription = 'Buka Senin 08:00';
+        }
+        // Perbarui tampilan status
+        statusElement.textContent = statusText;
+        statusElement.className = 'operational-hours__status operational-hours__status--' + status;
+        // Tambahkan deskripsi status jika ada
+        if (statusDescription) {
+          statusElement.setAttribute('title', statusDescription);
+        }
+      }
+      // Fungsi untuk menampilkan/sembunyikan detail jadwal
+      window.toggleScheduleDetails = function() {
+        const details = document.getElementById('schedule-details');
+        const arrow = document.getElementById('schedule-arrow');
+        details.classList.toggle('visible');
+        if (details.classList.contains('visible')) {
+          arrow.textContent = '▲';
+        } else {
+          arrow.textContent = '▼';
+        }
+      }
+      // Perbarui waktu setiap detik
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+      // Tahun di footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
   // ---------- FOOTER YEAR ----------
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
