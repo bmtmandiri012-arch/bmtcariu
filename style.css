@@ -1146,3 +1146,207 @@ html, body {
 }
 
 /* jangan sentuh footer/header/elemen kbms lain - semua selector di atas scoped ke .tabungan- */
+/* Styling untuk jam operasional yang elegan dan seimbang */
+    .operational-hours {
+      background: white;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+      margin-top: 25px;
+      max-width: 100%;
+    }
+
+    .operational-hours__title {
+      font-size: 1.25rem;
+      margin: 0 0 20px 0;
+      color: #0d5e2a;
+      font-weight: 600;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eaeaea;
+      text-align: center;
+    }
+
+    .operational-hours__main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .operational-hours__time-container {
+      flex: 2;
+      min-width: 0;
+    }
+
+    .operational-hours__time {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0d5e2a;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .operational-hours__date {
+      font-size: 1rem;
+      color: #6b7280;
+    }
+
+    .operational-hours__status-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      padding-left: 20px;
+      border-left: 1px solid #eaeaea;
+    }
+
+    .operational-hours__status-label {
+      font-size: 0.9rem;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+
+    .operational-hours__status {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .operational-hours__status--open {
+      color: #2e7d32;
+    }
+
+    .operational-hours__status--closed {
+      color: #c62828;
+    }
+
+    .operational-hours__status--break {
+      color: #f57c00;
+    }
+
+    .operational-hours__schedule-toggle {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      color: #0d5e2a;
+      font-size: 0.95rem;
+      cursor: pointer;
+      padding: 10px 18px;
+      border-radius: 6px;
+      margin: 0 auto;
+      display: block;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .operational-hours__schedule-toggle:hover {
+      background: #e9ecef;
+      border-color: #ced4da;
+      transform: translateY(-1px);
+    }
+
+    .operational-hours__schedule {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eaeaea;
+      display: none;
+    }
+
+    .operational-hours__schedule.visible {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .operational-hours__schedule-title {
+      font-size: 1.1rem;
+      margin: 0 0 15px 0;
+      color: #0d5e2a;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .operational-hours__schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 12px;
+    }
+
+    .operational-hours__day {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .operational-hours__day:last-child {
+      border-bottom: none;
+    }
+
+    .operational-hours__dayname {
+      font-weight: 500;
+      color: #4a4a4a;
+    }
+
+    .operational-hours__time-range {
+      color: #6b7280;
+      text-align: right;
+    }
+
+    /* Responsivitas */
+    @media (max-width: 968px) {
+      .operational-hours__main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .operational-hours__status-container {
+        border-left: none;
+        border-top: 1px solid #eaeaea;
+        padding-left: 0;
+        padding-top: 15px;
+        width: 100%;
+      }
+
+      .operational-hours__time {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .operational-hours {
+        padding: 20px;
+      }
+
+      .operational-hours__time {
+        font-size: 1.7rem;
+      }
+
+      .operational-hours__schedule-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .operational-hours {
+        padding: 18px;
+      }
+
+      .operational-hours__time {
+        font-size: 1.6rem;
+      }
+
+      .operational-hours__schedule-toggle {
+        width: 100%;
+      }
+    }
