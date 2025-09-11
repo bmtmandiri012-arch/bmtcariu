@@ -110,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 // Script untuk jam operasional
-    document.addEventListener('DOMContentLoaded', function() {
       // Fungsi untuk memperbarui waktu dan tanggal
       function updateDateTime() {
         const now = new Date();
@@ -221,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setInterval(updateDateTime, 1000);
       // Tahun di footer
       document.getElementById('year').textContent = new Date().getFullYear();
-    });
+      
   // ---------- FOOTER YEAR ----------
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
