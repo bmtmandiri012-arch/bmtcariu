@@ -103,7 +103,49 @@
         </div>
       </div>
     </section>
+<!-- Grid baru untuk jam operasional dengan layout yang lebih seimbang -->
+        <div class="operational-hours">
+          <h4 class="operational-hours__title">Jam Operasional</h4>
 
+          <div class="operational-hours__main">
+            <div class="operational-hours__time-container">
+              <div class="operational-hours__time" id="current-time">00:00:00</div>
+              <div class="operational-hours__date" id="current-date">Hari, DD MM YYYY</div>
+            </div>
+
+            <div class="operational-hours__status-container">
+              <div class="operational-hours__status-label">Status:</div>
+              <div class="operational-hours__status" id="status-indicator">Memeriksa...</div>
+            </div>
+          </div>
+
+          <button class="operational-hours__schedule-toggle" onclick="toggleScheduleDetails()">
+            Lihat jadwal lengkap
+            <span id="schedule-arrow">▼</span>
+          </button>
+
+          <div class="operational-hours__schedule" id="schedule-details">
+            <h5 class="operational-hours__schedule-title">Jadwal Operasional</h5>
+
+            <div class="operational-hours__schedule-grid">
+              <div class="operational-hours__day">
+                <span class="operational-hours__dayname">Senin - Jumat</span>
+                <span class="operational-hours__time-range">08:00 - 12:00<br>13:00 - 16:00</span>
+              </div>
+              <div class="operational-hours__day">
+                <span class="operational-hours__dayname">Sabtu</span>
+                <span class="operational-hours__time-range">08:00 - 12:30</span>
+              </div>
+              <div class="operational-hours__day">
+                <span class="operational-hours__dayname">Minggu</span>
+                <span class="operational-hours__time-range">Tutup</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <section id="layanan" class="kbms-section">
       <div class="kbms-container">
         <h2>Layanan Kami</h2>
