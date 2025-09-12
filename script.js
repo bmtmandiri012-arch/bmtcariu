@@ -1,24 +1,18 @@
-// script.js
+// script.js (paste keseluruhan ini, ganti file lama)
 document.addEventListener("DOMContentLoaded", () => {
   // ---------- NAV TOGGLE ----------
   const toggle = document.querySelector(".kbms-nav-toggle");
   const nav = document.querySelector(".kbms-nav");
-  if (toggle && nav) {
+  if (toggle && nav)
     toggle.addEventListener("click", () => nav.classList.toggle("is-open"));
-  }
 
   // ---------- SLIDER ----------
   const container = document.querySelector(".kbms-slider");
   const track = document.querySelector(".kbms-slider__wrapper");
-  if (!container || !track) {
-    console.warn("Slider: elemen tidak lengkap.");
-  } else {
+  if (container && track) {
     const slides = track.querySelectorAll(".kbms-slide");
-    if (!slides.length) {
-      console.warn("Slider: tidak ada .kbms-slide.");
-    } else {
-      // Pastikan setiap slide pas 1 layar
-      slides.forEach(s => {
+    if (slides.length) {
+      slides.forEach((s) => {
         s.style.minWidth = "100%";
         s.style.flex = "0 0 100%";
       });
@@ -49,38 +43,35 @@ document.addEventListener("DOMContentLoaded", () => {
         autoTimer = null;
       };
 
-      // Init
       track.style.willChange = "transform";
-      track.style.backfaceVisibility = "hidden";
-      track.querySelectorAll("img").forEach(img => {
+      track.querySelectorAll("img").forEach((img) => {
         img.setAttribute("draggable", "false");
         img.setAttribute("decoding", "async");
       });
       goTo(0, false);
       startAuto();
 
-      // Pointer events
-      container.style.touchAction = "pan-y"; // biar horizontal drag tidak bentrok dengan scroll
+      container.style.touchAction = "pan-y";
       container.addEventListener("pointerdown", (e) => {
         dragging = true;
         startX = e.clientX;
         deltaX = 0;
         stopAuto();
         setX(-index * slideW, false);
-        try { track.setPointerCapture && track.setPointerCapture(e.pointerId); } catch {}
+        try {
+          track.setPointerCapture && track.setPointerCapture(e.pointerId);
+        } catch {}
       });
 
       container.addEventListener("pointermove", (e) => {
         if (!dragging) return;
         deltaX = e.clientX - startX;
-        // geser mengikuti jari
         setX(-index * slideW + deltaX, false);
       });
 
       const endDrag = (e) => {
         if (!dragging) return;
         dragging = false;
-        // Threshold adaptif: 8% dari lebar slide (min 30px, max 80px)
         const thresh = Math.max(30, Math.min(80, slideW * 0.08));
         if (Math.abs(deltaX) > thresh) {
           goTo(deltaX < 0 ? index + 1 : index - 1, true);
@@ -89,138 +80,155 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         deltaX = 0;
         startAuto();
-        try { track.releasePointerCapture && track.releasePointerCapture(e.pointerId); } catch {}
+        try {
+          track.releasePointerCapture &&
+            track.releasePointerCapture(e.pointerId);
+        } catch {}
       };
 
       container.addEventListener("pointerup", endDrag);
       container.addEventListener("pointercancel", endDrag);
       container.addEventListener("pointerleave", endDrag);
 
-      // Keyboard (opsional)
       document.addEventListener("keydown", (e) => {
-        if (e.key === "ArrowLeft") { goTo(index - 1); stopAuto(); startAuto(); }
-        if (e.key === "ArrowRight") { goTo(index + 1); stopAuto(); startAuto(); }
+        if (e.key === "ArrowLeft") {
+          goTo(index - 1);
+          stopAuto();
+          startAuto();
+        }
+        if (e.key === "ArrowRight") {
+          goTo(index + 1);
+          stopAuto();
+          startAuto();
+        }
       });
 
-      // Resize
       window.addEventListener("resize", () => {
         slideW = container.clientWidth;
         goTo(index, false);
       });
     }
   }
-// Script untuk jam operasional
-      // Fungsi untuk memperbarui waktu dan tanggal
-      function updateDateTime() {
-        const now = new Date();
-        const timeElement = document.getElementById('current-time');
-        const dateElement = document.getElementById('current-date');
-        // Format waktu
-        const timeString = now.toLocaleTimeString('id-ID');
-        timeElement.textContent = timeString;
-        // Format tanggal
-        const options = {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        };
-        const dateString = now.toLocaleDateString('id-ID', options);
-        dateElement.textContent = dateString;
-        // Periksa status buka/tutup
-        checkBusinessHours(now);
+
+  // ---------- SEARCH SUGGESTIONS ----------
+  const searchInput = document.getElementById("q");
+  const suggestionsList = document.getElementById("suggestions");
+  const produkData = [
+    "Tabungan",
+    "Deposito Berjangka",
+    "Pembiayaan Syariah",
+    "Pembukaan Rekening",
+    "Mobile Banking"
+  ];
+
+  if (searchInput && suggestionsList) {
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.trim().toLowerCase();
+      suggestionsList.innerHTML = "";
+
+      if (!query) {
+        suggestionsList.style.display = "none";
+        return;
       }
-      // Fungsi untuk memeriksa jam operasional
-      function checkBusinessHours(now) {
-        const statusElement = document.getElementById('status-indicator');
-        const day = now.getDay(); // 0 = Minggu, 1 = Senin, ..., 6 = Sabtu
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        // Konversi ke menit untuk memudahkan perbandingan
-        const currentTimeInMinutes = hours * 60 + minutes;
-        let status = 'closed';
-        let statusText = 'Tutup';
-        let statusDescription = '';
-        if (day >= 1 && day <= 5) { // Senin - Jumat
-          // Pagi: 08:00 - 12:00
-          const morningOpen = 8 * 60; // 08:00
-          const morningClose = 12 * 60; // 12:00
-          // Siang: 13:00 - 16:00
-          const afternoonOpen = 13 * 60; // 13:00
-          const afternoonClose = 16 * 60; // 16:00
-          if (currentTimeInMinutes >= morningOpen && currentTimeInMinutes <= morningClose) {
-            status = 'open';
-            statusText = 'Buka';
-            const closingTime = new Date(now);
-            closingTime.setHours(12, 0, 0, 0);
-            statusDescription = 'Buka hingga ' + closingTime.toLocaleTimeString('id-ID', {
-              hour: '2-digit',
-              minute: '2-digit'
-            });
-          } else if (currentTimeInMinutes >= afternoonOpen && currentTimeInMinutes <= afternoonClose) {
-            status = 'open';
-            statusText = 'Buka';
-            const closingTime = new Date(now);
-            closingTime.setHours(16, 0, 0, 0);
-            statusDescription = 'Buka hingga ' + closingTime.toLocaleTimeString('id-ID', {
-              hour: '2-digit',
-              minute: '2-digit'
-            });
-          } else if (currentTimeInMinutes > morningClose && currentTimeInMinutes < afternoonOpen) {
-            status = 'break';
-            statusText = 'Istirahat';
-            const openingTime = new Date(now);
-            openingTime.setHours(13, 0, 0, 0);
-            statusDescription = 'Buka kembali ' + openingTime.toLocaleTimeString('id-ID', {
-              hour: '2-digit',
-              minute: '2-digit'
-            });
-          } else {
-            statusDescription = 'Buka besok 08:00';
+
+      const filtered = produkData.filter((item) =>
+        item.toLowerCase().includes(query)
+      );
+
+      if (filtered.length === 0) {
+        suggestionsList.style.display = "none";
+        return;
+      }
+
+      filtered.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        li.tabIndex = 0;
+        li.addEventListener("click", () => {
+          searchInput.value = item;
+          suggestionsList.innerHTML = "";
+          suggestionsList.style.display = "none";
+        });
+        li.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            searchInput.value = item;
+            suggestionsList.innerHTML = "";
+            suggestionsList.style.display = "none";
           }
-        } else if (day === 6) { // Sabtu
-          const openTime = 8 * 60; // 08:00
-          const closeTime = 12 * 60 + 30; // 12:30
-          if (currentTimeInMinutes >= openTime && currentTimeInMinutes <= closeTime) {
-            status = 'open';
-            statusText = 'Buka';
-            const closingTime = new Date(now);
-            closingTime.setHours(12, 30, 0, 0);
-            statusDescription = 'Buka hingga ' + closingTime.toLocaleTimeString('id-ID', {
-              hour: '2-digit',
-              minute: '2-digit'
-            });
-          } else {
-            statusDescription = 'Buka Senin 08:00';
-          }
-        } else if (day === 0) { // Minggu
-          statusDescription = 'Buka Senin 08:00';
-        }
-        // Perbarui tampilan status
-        statusElement.textContent = statusText;
-        statusElement.className = 'operational-hours__status operational-hours__status--' + status;
-        // Tambahkan deskripsi status jika ada
-        if (statusDescription) {
-          statusElement.setAttribute('title', statusDescription);
-        }
+        });
+        suggestionsList.appendChild(li);
+      });
+      suggestionsList.style.display = "block";
+    });
+
+    // Klik di luar → tutup suggestion
+    document.addEventListener("click", (e) => {
+      if (
+        !e.target.closest(".kbms-search") &&
+        !e.target.closest("#suggestions")
+      ) {
+        suggestionsList.innerHTML = "";
+        suggestionsList.style.display = "none";
       }
-      // Fungsi untuk menampilkan/sembunyikan detail jadwal
-      window.toggleScheduleDetails = function() {
-        const details = document.getElementById('schedule-details');
-        const arrow = document.getElementById('schedule-arrow');
-        details.classList.toggle('visible');
-        if (details.classList.contains('visible')) {
-          arrow.textContent = '▲';
-        } else {
-          arrow.textContent = '▼';
-        }
-      }
-      // Perbarui waktu setiap detik
-      updateDateTime();
-      setInterval(updateDateTime, 1000);
-      // Tahun di footer
-      document.getElementById('year').textContent = new Date().getFullYear();
-      
+    });
+  }
+  // kode JS tambahan untuk search ke tabungan.html
+  const produk = [
+    { name: "Tabungan", url: "tabungan.html" },
+    { name: "Deposito", url: "produk-deposito.html" },
+    { name: "Pembiayaan", url: "produk-pembiayaan.html" }
+  ];
+
+  const input = document.getElementById("q");
+  const suggestions = document.getElementById("suggestions");
+
+  input.addEventListener("input", () => {
+    const query = input.value.toLowerCase();
+    suggestions.innerHTML = "";
+
+    if (query.length > 0) {
+      const matches = produk.filter((item) =>
+        item.name.toLowerCase().includes(query)
+      );
+
+      matches.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item.name;
+        li.addEventListener("click", () => {
+          window.location.href = item.url;
+        });
+        suggestions.appendChild(li);
+      });
+
+      suggestions.style.display = matches.length ? "block" : "none";
+    } else {
+      suggestions.style.display = "none";
+    }
+  });
+
+  document.querySelector(".kbms-search").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const query = input.value.toLowerCase();
+    const match = produk.find((item) =>
+      item.name.toLowerCase().includes(query)
+    );
+    if (match) {
+      window.location.href = match.url;
+    }
+  });
+// Tambahkan di akhir file JS Anda
+function togglePersyaratan(jenis) {
+  const content = document.getElementById(`persyaratan-${jenis}`);
+  const button = document.getElementById(`btn-${jenis}`);
+  
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    button.textContent = 'Sembunyikan Cara Buka Rekening';
+  } else {
+    content.style.display = 'none';
+    button.textContent = 'Cara Buka Rekening';
+  }
+}
   // ---------- FOOTER YEAR ----------
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
