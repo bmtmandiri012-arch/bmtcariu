@@ -1,190 +1,225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  
+
 <head>
   <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <title>Baitul Maal wa Tamwil — KSPPS BERKAH MANDIRI SEJAHTERA</title>
-  <meta name="description" content="KSPPS BERKAH MANDIRI SEJAHTERA — layanan keuangan syariah yang aman, mudah, dan cepat. Cek tabungan, pembiayaan, dan layanan digital kami." />
-  <meta name="keywords" content="KSPPS, BMT, tabungan, pembiayaan, perbankan syariah, koperasi" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>Produk Tabungan — KSPPS BERKAH MANDIRI SEJAHTERA</title>
+  <meta name="description" content="Produk tabungan KSPPS Berkah Mandiri Sejahtera — Sing Berkah (Reguler), Paket Lebaran, Pendidikan, dan Qurban. Pilih sesuai kebutuhan Anda." />
+  <meta name="keywords" content="tabungan, BMT, KSPPS, Sing Berkah, tabungan lebaran, tabungan pendidikan, tabungan qurban" />
   <meta name="author" content="KSPPS BERKAH MANDIRI SEJAHTERA" />
-
-  <meta property="og:title" content="KSPPS BERKAH MANDIRI SEJAHTERA — Solusi Keuangan Syariah" />
-  <meta property="og:description" content="Layanan syariah yang aman, mudah, dan cepat." />
+  <meta property="og:title" content="Produk Tabungan — KSPPS BERKAH MANDIRI SEJAHTERA" />
+  <meta property="og:description" content="Tabungan syariah mudah dan terpercaya: reguler, lebaran, pendidikan, qurban." />
   <meta property="og:image" content="https://bmtmandiri012-arch.github.io/gambar-web/bmt.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="#" />
-
   <link rel="icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
-  <script src="script.js?v=2" defer></script>
-
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 
 <body>
- <a href="#kbms-main" class="skip-link">Lewati ke konten utama</a>
-
-
+  <a href="#kbms-main" class="skip-link">Lewati ke konten utama</a>
   <header class="kbms-header" role="banner">
     <div class="kbms-container kbms-header__inner">
       <div class="kbms-header__top">
-
         <div class="kbms-brand">
           <a href="index.html" aria-label="Beranda KSPPS BMS">
-            <img src="https://github.com/bmtmandiri012-arch/gambar-web/blob/main/bmt.jpg?raw=true"
-     alt="Logo KSPPS BMS"
-     class="kbms-brand__logo">
-
+            <img src="https://github.com/bmtmandiri012-arch/gambar-web/blob/main/bmt.jpg?raw=true" alt="Logo KSPPS BMS" class="kbms-brand__logo">
           </a>
           <div>
             <h1 class="kbms-brand__title">KSPPS Berkah Mandiri Sejahtera</h1>
             <p class="kbms-brand__tagline">Layanan syariah aman & mudah</p>
           </div>
         </div>
-
         <button class="kbms-nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-haspopup="true" aria-label="Toggle navigasi utama">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </button>
-
-        <form class="kbms-search">
-      <div class="kbms-search-wrapper">
-        <input id="q" name="q" type="search" placeholder="Cari produk, layanan..." autocomplete="off">
-        <ul id="suggestions" class="suggestions-list"></ul>
-      </div>
-      <button type="submit">🔍</button>
+        <form class="kbms-search" role="search" action="#" method="get" aria-label="Form pencarian">
+          <label class="visually-hidden" for="q">Cari</label>
+          <div class="kbms-search-wrapper">
+            <input id="q" name="q" type="search" placeholder="Cari produk, layanan..." autocomplete="off">
+            <ul id="suggestions" class="suggestions-list" role="listbox" aria-hidden="true"></ul>
+          </div>
+          <button type="submit" aria-label="Cari">🔍</button>
         </form>
       </div>
       <nav id="main-nav" class="kbms-nav" aria-label="Navigasi utama">
-        <a class="is-active" href="#" aria-current="page">Beranda</a>
-        <a href="Tabungan.html">Tabungan</a>
+        <a href="index.html">Beranda</a>
+        <a href="tabungan.html" class="is-active" aria-current="page">Tabungan</a>
         <a href="#layanan">Layanan</a>
-        <a href="Pembiayaan.html">Pembiayaan</a>
-        <a href="#buka-rekening">Kontak</a>     
+        <a href="#produk">Produk</a>
+        <a href="#kontak">Kontak</a>
       </nav>
     </div>
   </header>
-
-  <main id="kbms-main">
+  <main id="kbms-main" tabindex="-1">
     <section class="kbms-hero">
-      <div class="kbms-hero-slider">
-        <div class="kbms-slider">
-          <div class="kbms-slider__wrapper">
-            <div class="kbms-slide">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200" alt="Iklan produk tabungan syariah kami, mudah dan menguntungkan."draggable="false">
-            </div>
-            <div class="kbms-slide">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200" alt="Promo Pembiayaan untuk UMKM."draggable="false">
-            </div>
-            <div class="kbms-slide">
-              <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200" alt="Gratis Biaya Transfer dengan Aplikasi Mobile Banking." draggable="false">
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
       <div class="kbms-container kbms-hero__inner">
         <div class="kbms-hero-content">
-          <h1>Koperasi Simpan Pinjam dengan Pelayanan yang cepat</h1>
-          <p>Temukan solusi keuangan syariah yang aman, mudah, dan terpercaya. Semua layanan kami dirancang untuk membantu Anda mencapai tujuan finansial.</p>
-        </div>
-    </section>
-
-    <section class="kbms-section kbms-announcement">
-      <div class="kbms-container">
-        <div class="kbms-grid kbms-grid--1">
-          <div class="kbms-card">
-            <h3>Pengumuman Penting</h3>
-            <p>Informasi terbaru terkait jam operasional atau kebijakan baru.</p>
-            <p class="kbms-small-text"><i>Diperbarui: 20 Agustus 2025</i></p>
-          </div>
+          <h1>Produk Tabungan Kami</h1>
+          <p>Tabungan syariah yang mudah & terpercaya. Pilih produk sesuai tujuan: reguler (Sing Berkah), Paket Lebaran, Pendidikan, atau Qurban.</p>
         </div>
       </div>
     </section>
-<!-- Grid baru untuk jam operasional dengan layout yang lebih seimbang -->
-        <div class="operational-hours">
-          <h4 class="operational-hours__title">Jam Operasional</h4>
-
-          <div class="operational-hours__main">
-            <div class="operational-hours__time-container">
-              <div class="operational-hours__time" id="current-time">00:00:00</div>
-              <div class="operational-hours__date" id="current-date">Hari, DD MM YYYY</div>
-            </div>
-
-            <div class="operational-hours__status-container">
-              <div class="operational-hours__status-label">Status:</div>
-              <div class="operational-hours__status" id="status-indicator">Memeriksa...</div>
-            </div>
-          </div>
-
-          <button class="operational-hours__schedule-toggle" onclick="toggleScheduleDetails()">
-            Lihat jadwal lengkap
-            <span id="schedule-arrow">▼</span>
-          </button>
-
-          <div class="operational-hours__schedule" id="schedule-details">
-            <h5 class="operational-hours__schedule-title">Jadwal Operasional</h5>
-
-            <div class="operational-hours__schedule-grid">
-              <div class="operational-hours__day">
-                <span class="operational-hours__dayname">Senin - Jumat</span>
-                <span class="operational-hours__time-range">08:00 - 12:00<br>13:00 - 16:00</span>
-              </div>
-              <div class="operational-hours__day">
-                <span class="operational-hours__dayname">Sabtu</span>
-                <span class="operational-hours__time-range">08:00 - 12:30</span>
-              </div>
-              <div class="operational-hours__day">
-                <span class="operational-hours__dayname">Minggu</span>
-                <span class="operational-hours__time-range">Tutup</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section id="layanan" class="kbms-section">
+    <section class="tabungan-section" aria-labelledby="tabungan-title">
       <div class="kbms-container">
-        <h2>Layanan Kami</h2>
-        <div class="kbms-grid kbms-grid--3">
-          <a href="produk-tabungan.html" class="kbms-product">
-            <h3>Tabungan Reguler</h3>
-            <p>Syarat mudah, setoran awal terjangkau.</p>
-          </a>
-          <a href="produk-deposito.html" class="kbms-product">
-            <h3>Deposito Berjangka</h3>
-            <p>Imbal hasil tetap untuk tenor pilihan.</p>
-          </a>
-          <a href="produk-pembiayaan.html" class="kbms-product">
-            <h3>Pembiayaan Syariah</h3>
-            <p>Fleksibel sesuai kebutuhan anggota.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section id="produk" class="kbms-section">
-      <div class="kbms-container">
-        <h2>Produk Rekening</h2>
-        <div class="kbms-grid kbms-grid--2">
-          <article class="kbms-product">
-            <h3>Tabungan Reguler</h3>
-            <p>Syarat mudah, setoran awal terjangkau.</p>
-            <a class="kbms-btn kbms-btn--outline" href="#kontak">Hubungi Kami</a>
+        <h2 id="tabungan-title">Pilihan Tabungan</h2>
+        <div class="tabungan-list" role="list">
+          <article class="tabungan-card" role="listitem" aria-labelledby="t-sing-berkah">
+            <div class="tabungan-media">
+              <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&auto=format&fit=crop&q=60" alt="Ilustrasi tabungan reguler" loading="lazy" class="tabungan-img">
+            </div>
+            <div class="tabungan-body">
+              <h3 id="t-sing-berkah" class="tabungan-title">Tabungan Sing Berkah (Reguler)</h3>
+              <p class="tabungan-lead">Tabungan harian fleksibel untuk kebutuhan keluarga dan transaksi sehari-hari — aman, mudah, dan tanpa proses rumit.</p>
+              <div id="persyaratan-sing-berkah" class="persyaratan-content" style="display: none;">
+                <h4>Cara Membuka Rekening</h4>
+                <ul>
+                  <li>Biaya anggota Rp50.000</li>
+                  <li>Setoran awal Rp200.000</li>
+                  <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
+                  <li>Isi formulir pendaftaran rekening</li>
+                </ul>
+                <button type="button" class="tabungan-btn tabungan-btn--close" onclick="togglePersyaratan('sing-berkah')">Tutup</button>
+              </div>
+              <details class="tabungan-details" id="selengkapnya-sing-berkah">
+                <summary style="display: none;">Selengkapnya tentang Tabungan Sing Berkah</summary>
+                <div class="tabungan-more">
+                  <h4>Pengertian Tabungan</h4>
+                  <p>Tabungan Sing Berkah adalah produk tabungan berbasis syariah yang memberikan kemudahan untuk kebutuhan harian, dengan sistem bagi hasil sesuai prinsip syariah.</p>
+                  <h4>Manfaat</h4>
+                  <ul>
+                    <li>Bagi hasil kompetitif berdasarkan prinsip syariah</li>
+                    <li>Mendukung kebutuhan harian dan simpanan darurat</li>
+                    <li>Proses syariah yang transparan</li>
+                    <li>Akses layanan digital dan cabang</li>
+                  </ul>
+                  <h4>Fitur Tambahan</h4>
+                  <ul>
+                    <li>Penarikan dana kapan saja tanpa batas minimum</li>
+                    <li>Laporan transaksi bulanan</li>
+                    <li>Kartu anggota untuk akses layanan eksklusif</li>
+                  </ul>
+                </div>
+              </details>
+              <div class="tabungan-actions">
+                <button type="button" class="tabungan-btn" id="btn-sing-berkah" onclick="togglePersyaratan('sing-berkah')">Cara Buka Rekening</button>
+                <button type="button" class="tabungan-btn--ghost" onclick="document.getElementById('selengkapnya-sing-berkah').open = !document.getElementById('selengkapnya-sing-berkah').open;">Selengkapnya</button>
+              </div>
+            </div>
           </article>
-          <article class="kbms-product">
-            <h3>Deposito Berjangka</h3>
-            <p>Imbal hasil tetap untuk tenor pilihan.</p>
-            <a class="kbms-btn kbms-btn--outline" href="#kontak">Pelajari</a>
+          <!-- Kartu tabungan lainnya tetap sama -->
+          <article class="tabungan-card" role="listitem" aria-labelledby="t-lebaran">
+            <div class="tabungan-media">
+              <img src="https://images.unsplash.com/photo-1600180758890-1f9e86f7a1ee?w=1200&auto=format&fit=crop&q=60" alt="Ilustrasi tabungan lebaran" loading="lazy" class="tabungan-img">
+            </div>
+            <div class="tabungan-body">
+              <h3 id="t-lebaran" class="tabungan-title">Tabungan Paket Lebaran</h3>
+              <p class="tabungan-lead">Rencanakan dana Idul Fitri dengan setoran berkala — tersedia paket harian/bulanan yang membantu mencapai target.</p>
+              <ul class="tabungan-highlights">
+                <li><strong>Paket:</strong> Beragam (ringan → agresif)</li>
+                <li><strong>Pencairan:</strong> Dipercepat menjelang Idul Fitri</li>
+              </ul>
+              <details class="tabungan-details">
+                <summary>Selengkapnya tentang Tabungan Paket Lebaran</summary>
+                <div class="tabungan-more">
+                  <h4>Manfaat</h4>
+                  <ul>
+                    <li>Target terukur untuk biaya lebaran</li>
+                    <li>Rencana setoran otomatis (opsional)</li>
+                    <li>Pilihan tenor yang fleksibel</li>
+                  </ul>
+                  <h4>Persyaratan</h4>
+                  <ul>
+                    <li>KTP / identitas</li>
+                    <li>Formulir pendaftaran paket</li>
+                  </ul>
+                  <h4>Cara Ikut</h4>
+                  <p>Pilih paket & jadwalkan setoran di cabang atau via layanan digital.</p>
+                </div>
+              </details>
+              <div class="tabungan-actions">
+                <button type="button" class="tabungan-btn">Pilih Paket</button>
+                <button type="button" class="tabungan-btn--ghost" onclick="this.closest('.tabungan-card').querySelector('.tabungan-details').open = !this.closest('.tabungan-card').querySelector('.tabungan-details').open">Selengkapnya</button>
+              </div>
+            </div>
+          </article>
+          <article class="tabungan-card" role="listitem" aria-labelledby="t-pendidikan">
+            <div class="tabungan-media">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&auto=format&fit=crop&q=60" alt="Ilustrasi tabungan pendidikan" loading="lazy" class="tabungan-img">
+            </div>
+            <div class="tabungan-body">
+              <h3 id="t-pendidikan" class="tabungan-title">Tabungan Pendidikan</h3>
+              <p class="tabungan-lead">Mempersiapkan biaya pendidikan anak secara terencana — aman & sesuai prinsip syariah.</p>
+              <ul class="tabungan-highlights">
+                <li><strong>Rekomendasi setoran:</strong> Mulai Rp100.000 / bulan</li>
+                <li><strong>Fleksibilitas:</strong> Jangka & jumlah disesuaikan</li>
+              </ul>
+              <details class="tabungan-details">
+                <summary>Selengkapnya tentang Tabungan Pendidikan</summary>
+                <div class="tabungan-more">
+                  <h4>Manfaat</h4>
+                  <ul>
+                    <li>Rencana terarah untuk kebutuhan sekolah / kuliah</li>
+                    <li>Catatan perkembangan & saran paket</li>
+                  </ul>
+                  <h4>Persyaratan</h4>
+                  <ul>
+                    <li>KTP wali</li>
+                    <li>Formulir pendaftaran</li>
+                  </ul>
+                  <h4>Cara Mulai</h4>
+                  <p>Hubungi petugas di cabang untuk rekomendasi paket sesuai usia anak dan target biaya.</p>
+                </div>
+              </details>
+              <div class="tabungan-actions">
+                <button type="button" class="tabungan-btn">Mulai Menabung</button>
+                <button type="button" class="tabungan-btn--ghost" onclick="this.closest('.tabungan-card').querySelector('.tabungan-details').open = !this.closest('.tabungan-card').querySelector('.tabungan-details').open">Selengkapnya</button>
+              </div>
+            </div>
+          </article>
+          <article class="tabungan-card" role="listitem" aria-labelledby="t-qurban">
+            <div class="tabungan-media">
+              <img src="https://images.unsplash.com/photo-1603642633278-9a2b4b3c7f0d?w=1200&auto=format&fit=crop&q=60" alt="Ilustrasi tabungan qurban" loading="lazy" class="tabungan-img">
+            </div>
+            <div class="tabungan-body">
+              <h3 id="t-qurban" class="tabungan-title">Tabungan Qurban</h3>
+              <p class="tabungan-lead">Targetkan hewan qurban dengan setoran rutin — pencairan & distribusi terorganisir saat Idul Adha.</p>
+              <ul class="tabungan-highlights">
+                <li><strong>Target:</strong> Sesuaikan dengan paket hewan</li>
+                <li><strong>Distribusi:</strong> Dikelola oleh BMT saat Idul Adha</li>
+              </ul>
+              <details class="tabungan-details">
+                <summary>Selengkapnya tentang Tabungan Qurban</summary>
+                <div class="tabungan-more">
+                  <h4>Manfaat</h4>
+                  <ul>
+                    <li>Praktis untuk persiapan qurban</li>
+                    <li>Proses distribusi transparan</li>
+                  </ul>
+                  <h4>Persyaratan</h4>
+                  <ul>
+                    <li>KTP</li>
+                    <li>Pendaftaran paket qurban</li>
+                  </ul>
+                  <h4>Cara Ikut</h4>
+                  <p>Pilih paket hewan & tentukan jadwal setoran; kami bantu pemilahan & distribusi tepat waktu.</p>
+                </div>
+              </details>
+              <div class="tabungan-actions">
+                <button type="button" class="tabungan-btn">Rencanakan Qurban</button>
+                <button type="button" class="tabungan-btn--ghost" onclick="this.closest('.tabungan-card').querySelector('.tabungan-details').open = !this.closest('.tabungan-card').querySelector('.tabungan-details').open">Selengkapnya</button>
+              </div>
+            </div>
           </article>
         </div>
       </div>
     </section>
-
   </main>
-
   <footer class="kbms-footer" role="contentinfo">
     <div class="kbms-container kbms-footer__inner">
       <div>
