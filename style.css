@@ -1064,7 +1064,7 @@ img {
   }
 
   .kbms-brand__logo {
-    height: 50px;
+    height: 45px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -1079,7 +1079,6 @@ img {
   }
 
   .kbms-brand__tagline {
-    margin-left: auto;
     font-size: 12px;
     opacity: 0.9;
   }
