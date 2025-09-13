@@ -1056,8 +1056,9 @@ img {
   }
   
   .kbms-brand {
+    flex-direction: column;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     text-decoration: none;
     color: inherit;
