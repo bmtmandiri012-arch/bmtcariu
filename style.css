@@ -110,6 +110,8 @@ img {
     HEADER
 ==========================================================*/
 .kbms-header {
+  backface-visibility: hidden;
+  transform: translateZ(0);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -301,7 +303,6 @@ img {
 
 .kbms-slider__wrapper {
   display: flex;
-  will-change: transform;
   transition: transform 0.28s ease-out;
 }
 
@@ -1051,8 +1052,8 @@ img {
 /* Mobile (<= 720px) */
 @media (max-width: 720px) {
   .kbms-container {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
   
   .kbms-brand {
@@ -1080,6 +1081,8 @@ img {
   }
 
   .kbms-brand__tagline {
+    display: block;
+    white-space: normal;
     font-size: 12px;
     opacity: 0.9;
   }
