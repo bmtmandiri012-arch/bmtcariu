@@ -1254,7 +1254,9 @@ img {
   }
 
   .kbms-brand__tagline {
-    display: none;
+    display: block;
+    font-size: 10px;
+    white-space: normal;
   }
 
   .kbms-hero-content {
