@@ -931,7 +931,7 @@ img {
 }
 
 .kbms-nav-toggle {
-  display: none;
+  display: flwx;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
@@ -965,7 +965,7 @@ img {
 }
 
 .kbms-nav {
-  display: flex;
+  display: none;
   gap: 4px;
   flex-wrap: wrap;
   padding: 0 4px;
@@ -995,6 +995,7 @@ img {
 }
 
 .kbms-nav a.is-active {
+  display: flex;
   background: rgba(255, 255, 255, 0.2);
 }  
   .about-content {
