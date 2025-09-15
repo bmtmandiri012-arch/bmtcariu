@@ -806,53 +806,212 @@ img {
 
 /* Mobile (360px - 767px) - Fokus pada 720px */
 @media (max-width: 767px) {
+  .kbms-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, var(--kbms-brand-1), var(--kbms-brand-2));
+  color: var(--kbms-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+}
+
+.kbms-header__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kbms-header__top {
+  padding: 7px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.kbms-brand {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.kbms-brand__logo {
+  height: 50px;
+  background: transparent;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.kbms-brand__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.kbms-brand__tagline {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+  display: block;
+}
+
+.kbms-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 300px;
+  width: 100%;
+  justify-self: center;
+}
+
+.kbms-search-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  flex: 1;
+}
+
+.kbms-search input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.kbms-search button {
+  background: var(--kbms-accent);
+  color: #1f2937;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.suggestions-list {
+  color: var(--kbms-text);
+  font-size: 14px;
+  top: calc(100% + 6px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: none;
+}
+
+.suggestions-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggestions-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.kbms-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin: 0;
+}
+
+.kbms-nav-toggle span {
+  padding-left: 5px;
+  padding-right: 10px;
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: var(--kbms-white);
+  transition: all 0.3s ease;
+}
+
+.kbms-nav-toggle.is-active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.kbms-nav-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.kbms-nav-toggle.is-active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.kbms-nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.kbms-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.kbms-nav a {
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--kbms-white);
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  background: transparent !important;
+}
+
+.kbms-nav a:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--kbms-accent);
+  transform: translateY(-1px);
+}
+
+.kbms-nav a.is-active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 📱 Mobile (max 720px): search bar pindah ke bawah brand */
+@media (max-width: 720px) {
   .kbms-header__top {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-  }
-  
-  .kbms-brand {
-    max-width: calc(100% - 50px);
-  }
-  
-  .kbms-brand__title {
-    font-size: 1rem;
-  }
-  
-  .kbms-brand__tagline {
-    font-size: 0.7rem;
-  }
-  
-  .kbms-search {
-    order: 3;
-    max-width: 100%;
-    margin-top: 10px;
-  }
-  
-  .kbms-nav-toggle {
-    display: flex;
-  }
-  
-  .kbms-nav {
-    display: none;
     flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
+  }
+
+  .kbms-search {
     width: 100%;
-    padding: 12px;
-    background: linear-gradient(180deg, var(--kbms-brand-1), var(--kbms-brand-2));
-    border-radius: 8px;
-    margin-top: 12px;
+    max-width: 100%;
   }
-  
-  .kbms-nav.is-open {
-    display: flex;
-  }
-  
-  .kbms-nav a {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
+}
+
   
   .about-content {
     grid-template-columns: 1fr;
