@@ -1104,7 +1104,6 @@ img {
     justify-content: space-between;
     margin-left: auto;
     display: flex;
-    background: transparent;
     border: none;
     cursor: pointer;
   }
