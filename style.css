@@ -1089,16 +1089,6 @@ img {
     margin-top: 10px;
   }
   
-  .kbms-nav-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-}
-  
   .kbms-nav {
     display: none;
     flex-direction: column;
@@ -1119,10 +1109,20 @@ img {
     text-align: center;
     padding: 10px;
   }
+   .kbms-nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 3px;
+}
   
 .kbms-nav-toggle span {
   display: block;
-  width: 17px;        /* lebar garis */
+  width: 22px;        /* lebar garis */
   height: 5px;        /* tipis rapih */
   background: var(--kbms-white);
   border-radius: 2px; /* ujung agak membulat biar halus */
