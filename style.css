@@ -995,7 +995,6 @@ img {
 }
 
 .kbms-nav a.is-active {
-  display: flex;
   background: rgba(255, 255, 255, 0.2);
 }  
   .about-content {
