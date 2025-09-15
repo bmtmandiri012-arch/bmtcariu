@@ -240,7 +240,6 @@ img {
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 3px; /* jarak antar garis */
   background: transparent;
   border: none;
   cursor: pointer;
@@ -259,7 +258,8 @@ img {
 
 .kbms-nav-toggle span {
   display: block;
-  width: 13px;
+  gap: 3px; /* jarak antar garis */
+  width: 17px;
   height: 6px;
   background-color: var(--kbms-white);
   border-radius: 2px;
@@ -1094,7 +1094,6 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 3px; /* jarak antar garis */
   background: transparent;
   border: none;
   cursor: pointer;
@@ -1124,7 +1123,8 @@ img {
   
 .kbms-nav-toggle span {
   display: block;
-  width: 13px;        /* lebar garis */
+  gap: 3px; /* jarak antar garis */
+  width: 17px;        /* lebar garis */
   height: 5px;        /* tipis rapih */
   background: var(--kbms-white);
   border-radius: 2px; /* ujung agak membulat biar halus */
