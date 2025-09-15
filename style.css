@@ -239,7 +239,11 @@ img {
 .kbms-nav-toggle {
   display: none;
 }
-
+ .kbms-nav-toggle span {
+    display: block;
+    background: var(--kbms-white);
+    border-radius: 2px;
+  }
 
 .kbms-nav a:hover {
   background: rgba(255, 255, 255, 0.14);
