@@ -251,8 +251,9 @@ img {
 }
 
 .kbms-nav-toggle span {
+  margin-left: 4px;
   display: block;
-  width: 22px;
+  width: 20px;
   height: 3px;
   background: var(--kbms-white);
   border-radius: 2px;
