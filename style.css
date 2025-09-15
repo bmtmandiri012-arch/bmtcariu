@@ -238,7 +238,15 @@ img {
 }
 .kbms-nav-toggle {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px; /* jarak antar garis */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
 }
+
 
 .kbms-nav a:hover {
   background: rgba(255, 255, 255, 0.14);
@@ -1083,8 +1091,15 @@ img {
   }
   
   .kbms-nav-toggle {
-    display: flex;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px; /* jarak antar garis */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
   
   .kbms-nav {
     display: none;
@@ -1107,16 +1122,14 @@ img {
     padding: 10px;
   }
   
- .kbms-nav-toggle span {
+.kbms-nav-toggle span {
   display: block;
-  width: 22px;
-  height: 3px;
-  background-color: var(--kbms-white);
-  border-radius: 2px;
-  margin: 5px 0; /* 👈 ini jarak antar garis */
+  width: 22px;        /* lebar garis */
+  height: 2px;        /* tipis rapih */
+  background: var(--kbms-white);
+  border-radius: 2px; /* ujung agak membulat biar halus */
   transition: all 0.3s ease;
 }
-
 
   .about-content {
     grid-template-columns: 1fr;
