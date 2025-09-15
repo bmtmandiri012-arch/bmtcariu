@@ -234,7 +234,7 @@ img {
   color: var(--kbms-white);
   font-weight: 500;
   transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  background: transparent !important;
+  background: transparent;
 }
 .kbms-nav-toggle {
   display: none;
@@ -1097,6 +1097,7 @@ img {
     padding: 10px;
   }
  .kbms-nav-toggle {
+    background: transparent;
     gap: 10px;
     flex-direction: column;
     width: 50px;
