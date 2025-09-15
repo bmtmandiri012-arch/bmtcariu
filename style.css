@@ -253,7 +253,7 @@ img {
 .kbms-nav-toggle span {
   margin-left: 4px;
   display: block;
-  width: 20px;
+  width: 22px;
   height: 3px;
   background: var(--kbms-white);
   border-radius: 2px;
@@ -1067,11 +1067,11 @@ img {
   }
   
   .kbms-brand__title {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
   
   .kbms-brand__tagline {
-    font-size: 0.75rem;
+    font-size: 1rem;
     display: block;
   }
   
@@ -1107,6 +1107,16 @@ img {
     padding: 10px;
   }
   
+  .kbms-nav-toggle span {
+  margin-left: 4px;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: var(--kbms-white);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
   .about-content {
     grid-template-columns: 1fr;
     gap: 24px;
