@@ -104,8 +104,9 @@ img {
   padding: 7px 11px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* supaya tidak dorong ke kanan */
   gap: 12px;
+  flex-wrap: wrap; /* biar search bar bisa turun ke bawah */
 }
 
 .kbms-brand {
@@ -123,7 +124,6 @@ img {
   object-fit: contain;
   flex-shrink: 0;
 }
-
 
 .kbms-brand__title {
   font-size: 1.1rem;
@@ -151,7 +151,9 @@ img {
   gap: 8px;
   max-width: 300px;
   width: 100%;
-  justify-self: center;
+  margin-left: auto;   /* di desktop: dorong ke kanan */
+  margin-right: auto;  /* di mobile: tetap bisa center */
+  margin-top: 6px;     /* jarak dari judul/tagline */
 }
 
 .kbms-search-wrapper {
