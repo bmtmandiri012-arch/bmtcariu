@@ -996,23 +996,7 @@ img {
 
 .kbms-nav a.is-active {
   background: rgba(255, 255, 255, 0.2);
-}
-
-/* 📱 Mobile (max 720px): search bar pindah ke bawah brand */
-@media (max-width: 720px) {
-  .kbms-header__top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .kbms-search {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-  
+}  
   .about-content {
     grid-template-columns: 1fr;
     gap: 24px;
