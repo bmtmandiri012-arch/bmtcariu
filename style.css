@@ -825,7 +825,6 @@ img {
   
   .kbms-search {
     order: 3;
-    grid-column: 1 / span 2;
     max-width: 100%;
     margin-top: 10px;
   }
