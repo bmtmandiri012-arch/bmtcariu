@@ -1,4 +1,3 @@
-
 :root {
   --kbms-container-max: 1100px;
   --kbms-hpad: clamp(16px, 5vw, 28px);
@@ -251,14 +250,15 @@ img {
 }
 
 .kbms-nav-toggle span {
-  margin-left: 4px;
   display: block;
   width: 22px;
   height: 3px;
-  background: var(--kbms-white);
+  background-color: var(--kbms-white);
   border-radius: 2px;
+  margin: 5px 0; /* 👈 ini jarak antar garis */
   transition: all 0.3s ease;
 }
+
 
 /* =========================================================
     HERO & SLIDER
@@ -1107,15 +1107,16 @@ img {
     padding: 10px;
   }
   
-  .kbms-nav-toggle span {
-  margin-left: 4px;
+ .kbms-nav-toggle span {
   display: block;
-  width: 20px;
+  width: 22px;
   height: 3px;
-  background: var(--kbms-white);
+  background-color: var(--kbms-white);
   border-radius: 2px;
+  margin: 5px 0; /* 👈 ini jarak antar garis */
   transition: all 0.3s ease;
 }
+
 
   .about-content {
     grid-template-columns: 1fr;
