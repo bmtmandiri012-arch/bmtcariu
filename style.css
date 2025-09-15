@@ -1110,6 +1110,8 @@ img {
   }
   
  .kbms-nav-toggle span {
+    width: 22px;
+    gap: 3px;
     display: block;
     background: var(--kbms-white);
     border-radius: 2px;
