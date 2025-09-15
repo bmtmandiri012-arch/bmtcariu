@@ -240,7 +240,7 @@ img {
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 10px; /* jarak antar garis */
+  gap: 5px; /* jarak antar garis */
   background: transparent;
   border: none;
   cursor: pointer;
@@ -260,7 +260,7 @@ img {
 .kbms-nav-toggle span {
   display: block;
   width: 13px;
-  height: 3px;
+  height: 6px;
   background-color: var(--kbms-white);
   border-radius: 2px;
   margin: 5px 0; /* 👈 ini jarak antar garis */
@@ -1091,11 +1091,10 @@ img {
   }
   
   .kbms-nav-toggle {
-  gap: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px; /* jarak antar garis */
+  gap: 5px; /* jarak antar garis */
   background: transparent;
   border: none;
   cursor: pointer;
