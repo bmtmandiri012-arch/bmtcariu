@@ -823,7 +823,7 @@ img {
 }
 
 .kbms-header__top {
-  padding: 7px 11px;
+  padding: 8px 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -839,7 +839,7 @@ img {
 }
 
 .kbms-brand__logo {
-  height: 60px;
+  height: 50px;
   background: transparent;
   width: auto;
   object-fit: contain;
