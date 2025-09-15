@@ -240,7 +240,7 @@ img {
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 5px; /* jarak antar garis */
+  gap: 3px; /* jarak antar garis */
   background: transparent;
   border: none;
   cursor: pointer;
@@ -1094,7 +1094,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px; /* jarak antar garis */
+  gap: 3px; /* jarak antar garis */
   background: transparent;
   border: none;
   cursor: pointer;
