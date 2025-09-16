@@ -729,7 +729,7 @@ img {
 }
 
 .testimonial-card::before {
-  content: """;
+  content: "";
   font-size: 5rem;
   color: #0d5e2a;
   opacity: 0.1;
@@ -1044,7 +1044,7 @@ img {
 }
 
 /* Mobile (≤ 767px) - Fokus pada perbaikan untuk 720px */
-@media (min-width: 639px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .kbms-container {
     padding-left: 15px;
     padding-right: 15px;
@@ -1121,7 +1121,7 @@ img {
 }
 
   .about-content {
-    grid-template-columns:repeat 1fr;
+    grid-template-columns: 1fr;
     gap: 24px;
   }
   
