@@ -1126,17 +1126,17 @@ img {
   }
   
   .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
   
   .feature-item {
-    padding: 16px;
+    padding: 14px;
   }
   
   .feature-icon {
-    font-size: 2rem;
-    height: 50px;
+    font-size: 1.3rem;
+    height: 35px;
   }
   
   .operational-hours__main {
