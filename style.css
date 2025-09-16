@@ -1121,8 +1121,8 @@ img {
 }
   
   .features-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: grid; !important;
+    grid-template-columns: 1fr 1fr; !important;
     gap: 10px;
   }
   
