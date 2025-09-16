@@ -1076,46 +1076,64 @@ img {
     margin-top: 10px;
   }
   
+  /* Nav default hidden */
   .kbms-nav {
     display: none;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(180deg, var(--kbms-brand-1), var(--kbms-brand-2));
-    border-radius: 8px;
-    margin-top: 12px;
-  }
-  
-  .kbms-nav.is-open {
-    display: flex;
-  }
-  
-  .kbms-nav a {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-  }
- .kbms-nav-toggle {
+    flex-wrap: wrap;
+    gap: 5px;
     background: transparent;
-    gap: 10px;
-    flex-direction: column;
-    width: 50px;
-    height: 30px;
-    justify-content: space-between;
+    padding-left: 4px;
+  }
+
+  .kbms-nav a {
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--kbms-white);
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    background: transparent !important;
+  }
+
+  .kbms-nav a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--kbms-accent);
+    transform: translateY(-1px);
+  }
+
+  .kbms-nav a.is-active {
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  /* Toggle hamburger */
+  .kbms-nav-toggle {
     margin-left: auto;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    background: transparent;
     border: none;
     cursor: pointer;
+    padding: 8px;
   }
-  
- .kbms-nav-toggle span {
-    width: 22px;
-    gap: 3px;
-    height: 3px;
+
+  .kbms-nav-toggle span {
     display: block;
+    width: 26px;
+    height: 3px;
     background: var(--kbms-white);
     border-radius: 2px;
+  }
+
+  /* Mobile: tampilkan nav ketika is-open */
+  .kbms-nav.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(180deg, var(--kbms-brand-1), var(--kbms-brand-2));
+    padding: 12px;
+    border-radius: 8px;
   }
 
   .about-content {
