@@ -1044,7 +1044,7 @@ img {
 }
 
 /* Mobile (≤ 767px) - Fokus pada perbaikan untuk 720px */
-@media (max-width: 767px) {
+@media (min-width: 639px) and (max-width: 767px) {
   .kbms-container {
     padding-left: 15px;
     padding-right: 15px;
@@ -1135,7 +1135,7 @@ img {
   }
   
   .feature-icon {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     height: 35px;
   }
   
