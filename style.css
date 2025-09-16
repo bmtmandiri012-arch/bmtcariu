@@ -1119,11 +1119,6 @@ img {
   background: var(--kbms-white);
   border-radius: 2px;
 }
-
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
   
   .features-grid {
     display: grid;
@@ -1160,6 +1155,12 @@ img {
   
   .kbms-slide {
     height: clamp(250px, 50vh, 600px);
+  }
+}
+@media (max-width: 767px) {
+   .about-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
