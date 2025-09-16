@@ -1121,7 +1121,7 @@ img {
 }
 
   .about-content {
-    grid-template-columns: 1fr;
+    grid-template-columns:repeat 1fr;
     gap: 24px;
   }
   
