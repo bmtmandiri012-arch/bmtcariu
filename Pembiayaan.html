@@ -76,94 +76,130 @@
     </section>
 
     <!-- LIST PRODUK: gunakan kelas tabungan- agar styling identik -->
-    <section class="tabungan-section" aria-labelledby="section-list">
-      <div class="kbms-container">
-        <h2 id="section-list">Pilihan Akad Pembiayaan</h2>
-        <p class="tabungan-lead">Semua akad telah disusun ringkas: tujuan, keunggulan, dan ketentuan pokok. Silakan klik "Selengkapnya".</p>
+    <section class="tabungan-section" id="pembiayaan" aria-labelledby="pembiayaan-list">
+  <div class="kbms-container">
+    <h2 id="pembiayaan-list">Pilihan Akad Pembiayaan</h2>
+    <p class="tabungan-lead">Semua akad disusun ringkas: tujuan, keunggulan, dan ketentuan pokok. Klik tombol untuk melihat lebih detail.</p>
 
-        <div class="tabungan-list" role="list">
+    <div class="tabungan-list" role="list">
 
-          <!-- MURABAHAH -->
-          <article class="tabungan-card" role="listitem" aria-labelledby="murabahah-title" id="murabahah">
-            <div class="tabungan-media">
-              <img class="tabungan-img" src="https://images.unsplash.com/photo-1529400971008-8e3f88a31f58?w=1200&q=80&auto=format&fit=crop" alt="Ilustrasi transaksi murabahah: kesepakatan harga dengan margin" loading="lazy">
+      <!-- 1. Murabahah -->
+      <article class="tabungan-card" role="listitem" aria-labelledby="murabahah-title">
+        <div class="tabungan-media">
+          <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&auto=format&fit=crop&q=60"
+               alt="Ilustrasi pembiayaan Murabahah" loading="lazy" class="tabungan-img">
+        </div>
+        <div class="tabungan-body">
+          <h3 id="murabahah-title" class="tabungan-title">Al-Murabahah</h3>
+          <p class="tabungan-lead">Jual beli dengan margin disepakati; angsuran tetap & transparan. Cocok untuk pembelian barang/aset: kendaraan, mesin, perlengkapan usaha.</p>
+
+          <!-- Highlights -->
+          <ul class="tabungan-highlights">
+            <li><strong>Kategori:</strong> Jual beli barang/aset</li>
+            <li><strong>Skema:</strong> Angsuran tetap</li>
+            <li><strong>Fatwa:</strong> DSN-MUI No. 04/2000</li>
+          </ul>
+
+          <!-- Persyaratan -->
+          <div id="persyaratan-murabahah" style="display: none;">
+            <h4>Persyaratan</h4>
+            <ul>
+              <li>Fotokopi KTP & KK</li>
+              <li>Surat keterangan usaha</li>
+              <li>Uang muka sesuai kesepakatan</li>
+            </ul>
+          </div>
+
+          <!-- Details -->
+          <details class="tabungan-details" id="selengkapnya-murabahah">
+            <summary style="display: none;">Selengkapnya tentang Al-Murabahah</summary>
+            <div class="tabungan-more">
+              <h4>Pengertian</h4>
+              <p>Al-Murabahah adalah akad jual beli dimana penjual menyebutkan harga perolehan barang dan margin keuntungan disepakati bersama.</p>
+              <h4>Manfaat</h4>
+              <ul>
+                <li>Angsuran tetap, transparan</li>
+                <li>Bisa untuk pembelian aset usaha</li>
+                <li>Proses mudah & sesuai syariah</li>
+              </ul>
             </div>
-            <div class="tabungan-body">
-              <h3 id="murabahah-title" class="tabungan-title">Al-Murabahah</h3>
-              <p class="tabungan-lead">Jual beli dengan margin disepakati; angsuran tetap &amp; transparan. Cocok untuk pembelian barang/aset: kendaraan, mesin, perlengkapan usaha.</p>
+          </details>
 
-              <!-- Persyaratan (disembunyikan default) -->
-              <div id="persyaratan-murabahah" class="persyaratan-pembiayaan">
-                <h4>Persyaratan Al-Murabahah</h4>
-                <ul>
-                  <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
-                  <li>Bukti penghasilan atau slip gaji</li>
-                  <li>Proposal usaha (untuk pembiayaan produktif)</li>
-                  <li>Mengisi formulir aplikasi pembiayaan</li>
-                  <li>Jaminan sesuai kebijakan</li>
-                </ul>
-              </div>
+          <!-- Tombol -->
+          <div class="tabungan-actions">
+            <button type="button" class="tabungan-btn"
+              onclick="const box = document.getElementById('persyaratan-murabahah'); 
+                       box.style.display = box.style.display === 'block' ? 'none' : 'block';">
+              Cara Pengajuan
+            </button>
+            <button type="button" class="tabungan-btn--ghost"
+              onclick="const det = document.getElementById('selengkapnya-murabahah');
+                       det.open = !det.open;
+                       this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
+              Selengkapnya
+            </button>
+          </div>
+        </div>
+      </article>
 
-              <details class="tabungan-details" id="selengkapnya-murabahah">
-                <summary style="display:none;">Selengkapnya tentang Al-Murabahah</summary>
-                <div class="tabungan-more">
-                  <h4>Ketentuan Pokok</h4>
-                  <ul>
-                    <li>Lembaga membeli barang yang dibutuhkan anggota, lalu menjualnya kembali dengan margin disepakati.</li>
-                    <li>Pelunasan dengan angsuran tetap; denda sebatas biaya nyata (bukan bunga).</li>
-                    <li>Jaminan dapat diminta sesuai kebijakan risiko.</li>
-                  </ul>
-                  <p><em>Fatwa acuan:</em> DSN-MUI No. 04/DSN-MUI/IV/2000 (Murabahah).</p>
-                </div>
-              </details>
+      <!-- 2. Mudharabah -->
+      <article class="tabungan-card" role="listitem" aria-labelledby="mudharabah-title">
+        <div class="tabungan-media">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&auto=format&fit=crop&q=60"
+               alt="Ilustrasi pembiayaan Mudharabah" loading="lazy" class="tabungan-img">
+        </div>
+        <div class="tabungan-body">
+          <h3 id="mudharabah-title" class="tabungan-title">Al-Mudharabah</h3>
+          <p class="tabungan-lead">Kerja sama usaha: modal dari koperasi, pengelolaan oleh anggota. Bagi hasil sesuai nisbah kesepakatan.</p>
 
-              <div class="tabungan-actions">
-                <button type="button" class="tabungan-btn" onclick="const box = document.getElementById('persyaratan-murabahah'); 
-                  box.style.display = box.style.display === 'block' ? 'none' : 'block';
-                  this.textContent = box.style.display === 'block' ? 'Tutup Persyaratan' : 'Ajukan Pembiayaan';
-                ">
-                  Ajukan Pembiayaan
-                </button>
-                <button type="button" class="tabungan-btn--ghost" onclick="document.getElementById('selengkapnya-murabahah').open = !document.getElementById('selengkapnya-murabahah').open;">
-                  Selengkapnya
-                </button>
-              </div>
+          <!-- Highlights -->
+          <ul class="tabungan-highlights">
+            <li><strong>Kategori:</strong> Kerjasama usaha</li>
+            <li><strong>Skema:</strong> Bagi hasil nisbah</li>
+            <li><strong>Fatwa:</strong> DSN-MUI No. 07/2000</li>
+          </ul>
+
+          <!-- Persyaratan -->
+          <div id="persyaratan-mudharabah" style="display: none;">
+            <h4>Persyaratan</h4>
+            <ul>
+              <li>Proposal usaha sederhana</li>
+              <li>Fotokopi KTP & KK</li>
+              <li>Surat keterangan usaha</li>
+            </ul>
+          </div>
+
+          <!-- Details -->
+          <details class="tabungan-details" id="selengkapnya-mudharabah">
+            <summary style="display: none;">Selengkapnya tentang Al-Mudharabah</summary>
+            <div class="tabungan-more">
+              <h4>Pengertian</h4>
+              <p>Al-Mudharabah adalah akad kerja sama usaha antara pemilik modal (shahibul maal) dengan pengelola (mudharib).</p>
+              <h4>Manfaat</h4>
+              <ul>
+                <li>Dukungan modal syariah</li>
+                <li>Skema bagi hasil transparan</li>
+                <li>Mendorong usaha produktif</li>
+              </ul>
             </div>
-          </article>
+          </details>
 
-          <!-- MUDHARABAH -->
-          <article class="tabungan-card" role="listitem" aria-labelledby="mudharabah-title" id="mudharabah">
-            <div class="tabungan-media">
-              <img class="tabungan-img" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop" alt="Pengusaha UMKM menerima pembiayaan bagi hasil (mudharabah)" loading="lazy">
-            </div>
-            <div class="tabungan-body">
-              <h3 id="mudharabah-title" class="tabungan-title">Al-Mudharabah</h3>
-              <p class="tabungan-lead">Bagi hasil antara pemilik modal (shahibul maal) dan pengelola (mudharib). Ideal untuk modal kerja usaha produktif.</p>
-
-              <!-- Persyaratan (disembunyikan default) -->
-              <div id="persyaratan-mudharabah" class="persyaratan-pembiayaan">
-                <h4>Persyaratan Al-Mudharabah</h4>
-                <ul>
-                  <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
-                  <li>Proposal usaha dan laporan keuangan</li>
-                  <li>Rencana bisnis yang jelas</li>
-                  <li>Mengisi formulir aplikasi pembiayaan</li>
-                  <li>Jaminan sesuai kebijakan</li>
-                </ul>
-              </div>
-
-              <details class="tabungan-details" id="selengkapnya-mudharabah">
-                <summary style="display:none;">Selengkapnya tentang Al-Mudharabah</summary>
-                <div class="tabungan-more">
-                  <h4>Ketentuan Pokok</h4>
-                  <ul>
-                    <li>Nisbah bagi hasil disepakati di awal; realisasi berdasarkan hasil usaha riil.</li>
-                    <li>Pengelola wajib profesional &amp; amanah; laporan keuangan periodik.</li>
-                    <li>Jaminan dapat diminta untuk aspek <em>non-business risk</em> (mis. moral hazard).</li>
-                  </ul>
-                  <p><em>Fatwa acuan:</em> DSN-MUI No. 07/DSN-MUI/IV/2000 (Mudharabah).</p>
-                </div>
-              </details>
+          <!-- Tombol -->
+          <div class="tabungan-actions">
+            <button type="button" class="tabungan-btn"
+              onclick="const box = document.getElementById('persyaratan-mudharabah'); 
+                       box.style.display = box.style.display === 'block' ? 'none' : 'block';">
+              Cara Pengajuan
+            </button>
+            <button type="button" class="tabungan-btn--ghost"
+              onclick="const det = document.getElementById('selengkapnya-mudharabah');
+                       det.open = !det.open;
+                       this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
+              Selengkapnya
+            </button>
+          </div>
+        </div>
+      </article>
 
               <div class="tabungan-actions">
                 <button type="button" class="tabungan-btn" onclick="const box = document.getElementById('persyaratan-mudharabah'); 
