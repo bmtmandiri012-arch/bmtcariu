@@ -152,14 +152,12 @@
           <h3 id="mudharabah-title" class="tabungan-title">Al-Mudharabah</h3>
           <p class="tabungan-lead">Kerja sama usaha: modal dari koperasi, pengelolaan oleh anggota. Bagi hasil sesuai nisbah kesepakatan.</p>
 
-          <!-- Highlights -->
           <ul class="tabungan-highlights">
             <li><strong>Kategori:</strong> Kerjasama usaha</li>
             <li><strong>Skema:</strong> Bagi hasil nisbah</li>
             <li><strong>Fatwa:</strong> DSN-MUI No. 07/2000</li>
           </ul>
 
-          <!-- Persyaratan -->
           <div id="persyaratan-mudharabah" style="display: none;">
             <h4>Persyaratan</h4>
             <ul>
@@ -169,7 +167,6 @@
             </ul>
           </div>
 
-          <!-- Details -->
           <details class="tabungan-details" id="selengkapnya-mudharabah">
             <summary style="display: none;">Selengkapnya tentang Al-Mudharabah</summary>
             <div class="tabungan-more">
@@ -184,7 +181,6 @@
             </div>
           </details>
 
-          <!-- Tombol -->
           <div class="tabungan-actions">
             <button type="button" class="tabungan-btn"
               onclick="const box = document.getElementById('persyaratan-mudharabah'); 
@@ -201,215 +197,175 @@
         </div>
       </article>
 
-              <div class="tabungan-actions">
-                <button type="button" class="tabungan-btn" onclick="const box = document.getElementById('persyaratan-mudharabah'); 
-                  box.style.display = box.style.display === 'block' ? 'none' : 'block';
-                  this.textContent = box.style.display === 'block' ? 'Tutup Persyaratan' : 'Ajukan Pembiayaan';
-                ">
-                  Ajukan Pembiayaan
-                </button>
-                <button type="button" class="tabungan-btn--ghost" onclick="document.getElementById('selengkapnya-mudharabah').open = !document.getElementById('selengkapnya-mudharabah').open;">
-                  Selengkapnya
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- MUSYARAKAH -->
-          <article class="tabungan-card" role="listitem" aria-labelledby="musyarakah-title" id="musyarakah">
-            <div class="tabungan-media">
-              <img class="tabungan-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80&auto=format&fit=crop" alt="Kemitraan modal (musyarakah) untuk pengembangan usaha" loading="lazy">
-            </div>
-            <div class="tabungan-body">
-              <h3 id="musyarakah-title" class="tabungan-title">Al-Musyarakah</h3>
-              <p class="tabungan-lead">Kerja sama penyertaan modal beberapa pihak; untung &amp; risiko proporsional. Fleksibel untuk proyek skala kecil hingga besar.</p>
-
-              <!-- Persyaratan (disembunyikan default) -->
-              <div id="persyaratan-musyarakah" class="persyaratan-pembiayaan">
-                <h4>Persyaratan Al-Musyarakah</h4>
-                <ul>
-                  <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
-                  <li>Proposal usaha dan laporan keuangan</li>
-                  <li>Rencana kerjasama yang jelas</li>
-                  <li>Mengisi formulir aplikasi pembiayaan</li>
-                  <li>Jaminan sesuai kebijakan</li>
-                </ul>
-              </div>
-
-              <details class="tabungan-details" id="selengkapnya-musyarakah">
-                <summary style="display:none;">Selengkapnya tentang Al-Musyarakah</summary>
-                <div class="tabungan-more">
-                  <h4>Ketentuan Pokok</h4>
-                  <ul>
-                    <li>Kontribusi modal/kontribusi kerja dicatat jelas; nisbah bagi hasil disepakati di awal.</li>
-                    <li>Kerugian dibagi sesuai porsi modal, kecuali akibat kelalaian salah satu pihak.</li>
-                    <li>Dapat dilengkapi jaminan sesuai praktik mitigasi risiko.</li>
-                  </ul>
-                  <p><em>Fatwa acuan:</em> DSN-MUI No. 08/DSN-MUI/IV/2000 (Musyarakah).</p>
-                </div>
-              </details>
-
-              <div class="tabungan-actions">
-                <button type="button" class="tabungan-btn" onclick="const box = document.getElementById('persyaratan-musyarakah'); 
-                  box.style.display = box.style.display === 'block' ? 'none' : 'block';
-                  this.textContent = box.style.display === 'block' ? 'Tutup Persyaratan' : 'Ajukan Pembiayaan';
-                ">
-                  Ajukan Pembiayaan
-                </button>
-                <button type="button" class="tabungan-btn--ghost" onclick="document.getElementById('selengkapnya-musyarakah').open = !document.getElementById('selengkapnya-musyarakah').open;">
-                  Selengkapnya
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- IJARAH -->
-          <article class="tabungan-card" role="listitem" aria-labelledby="ijarah-title" id="ijarah">
-            <div class="tabungan-media">
-              <img class="tabungan-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop" alt="Akad ijarah (sewa) atas manfaat barang/jasa" loading="lazy">
-            </div>
-            <div class="tabungan-body">
-              <h3 id="ijarah-title" class="tabungan-title">Al-Ijarah</h3>
-              <p class="tabungan-lead">Akad sewa-menyewa manfaat barang/jasa untuk jangka waktu tertentu. Biaya sewa disepakati di awal; aset tetap dimiliki lembaga selama masa sewa.</p>
-
-              <!-- Persyaratan (disembunyikan default) -->
-              <div id="persyaratan-ijarah" class="persyaratan-pembiayaan">
-                <h4>Persyaratan Al-Ijarah</h4>
-                <ul>
-                  <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
-                  <li>Bukti penghasilan atau slip gaji</li>
-                  <li>Spesifikasi barang yang akan disewa</li>
-                  <li>Mengisi formulir aplikasi pembiayaan</li>
-                  <li>Jaminan sesuai kebijakan</li>
-                </ul>
-              </div>
-
-              <details class="tabungan-details" id="selengkapnya-ijarah">
-                <summary style="display:none;">Selengkapnya tentang Al-Ijarah</summary>
-                <div class="tabungan-more">
-                  <h4>Ketentuan Pokok</h4>
-                  <ul>
-                    <li>Objek sewa halal &amp; layak; biaya perawatan utama oleh pemilik aset kecuali disepakati lain.</li>
-                    <li>Pembayaran sewa periodik; denda hanya sebatas biaya nyata.</li>
-                    <li>Asuransi syariah dianjurkan untuk aset bernilai tinggi.</li>
-                  </ul>
-                  <p><em>Fatwa acuan:</em> DSN-MUI No. 09/DSN-MUI/IV/2000 (Ijarah) &amp; 27/DSN-MUI/III/2002 (IMBT).</p>
-                </div>
-              </details>
-
-              <div class="tabungan-actions">
-                <button type="button" class="tabungan-btn" onclick="const box = document.getElementById('persyaratan-ijarah'); 
-                  box.style.display = box.style.display === 'block' ? 'none' : 'block';
-                  this.textContent = box.style.display === 'block' ? 'Tutup Persyaratan' : 'Ajukan Pembiayaan';
-                ">
-                  Ajukan Pembiayaan
-                </button>
-                <button type="button" class="tabungan-btn--ghost" onclick="document.getElementById('selengkapnya-ijarah').open = !document.getElementById('selengkapnya-ijarah').open;">
-                  Selengkapnya
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- RAHN -->
-          <article class="tabungan-card" role="listitem" aria-labelledby="rahn-title" id="rahn">
-            <div class="tabungan-media">
-              <img class="tabungan-img" src="https://images.unsplash.com/photo-1518546305927-5df6aa1b3e46?w=1200&q=80&auto=format&fit=crop" alt="Rahn (gadai syariah) sebagai agunan pembiayaan" loading="lazy">
-            </div>
-            <div class="tabungan-body">
-              <h3 id="rahn-title" class="tabungan-title">Al-Rahn (Gadai Syariah)</h3>
-              <p class="tabungan-lead">Menyerahkan barang bernilai sebagai agunan untuk memperoleh fasilitas pembiayaan. Biaya layanan/penitipan (ujrah) diperbolehkan; tidak ada bunga.</p>
-
-              <!-- Persyaratan (disembunyikan default) -->
-              <div id="persyaratan-rahn" class="persyaratan-pembiayaan">
-                <h4>Persyaratan Al-Rahn</h4>
-                <ul>
-                  <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
-                  <li>Bukti kepemilikan barang yang diagunkan</li>
-                  <li>Barang agunan dalam kondisi baik</li>
-                  <li>Mengisi formulir aplikasi pembiayaan</li>
-                  <li>Penilaian barang agunan oleh petugas</li>
-                </ul>
-              </div>
-
-              <details class="tabungan-details" id="selengkapnya-rahn">
-                <summary style="display:none;">Selengkapnya tentang Al-Rahn</summary>
-                <div class="tabungan-more">
-                  <h4>Ketentuan Pokok</h4>
-                  <ul>
-                    <li>Objek rahn halal &amp; jelas kepemilikan; taksiran wajar &amp; terdokumentasi.</li>
-                    <li>Apabila terjadi wanprestasi, agunan dapat dijual sesuai ketentuan syariah untuk pelunasan pokok dan biaya.</li>
-                    <li>Ujrah proporsional terhadap biaya riil penitipan/perawatan.</li>
-                  </ul>
-                  <p><em>Fatwa acuan:</em> DSN-MUI No. 25/DSN-MUI/III/2002 (Rahn), No. 26/DSN-MUI/III/2002 (Rahn Emas), dan pembaruan No. 92/DSN-MUI/IV/2014 (Pembiayaan yang disertai Rahn).</p>
-                </div>
-              </details>
-
-              <div class="tabungan-actions">
-                <button type="button" class="tabungan-btn" onclick="const box = document.getElementById('persyaratan-rahn'); 
-                  box.style.display = box.style.display === 'block' ? 'none' : 'block';
-                  this.textContent = box.style.display === 'block' ? 'Tutup Persyaratan' : 'Ajukan Pembiayaan';
-                ">
-                  Ajukan Pembiayaan
-                </button>
-                <button type="button" class="tabungan-btn--ghost" onclick="document.getElementById('selengkapnya-rahn').open = !document.getElementById('selengkapnya-rahn').open;">
-                  Selengkapnya
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- QARDHUL HASAN -->
-          <article class="tabungan-card" role="listitem" aria-labelledby="qardhul-hasan-title" id="qardhul-hasan">
-            <div class="tabungan-media">
-              <img class="tabungan-img" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&q=80&auto=format&fit=crop" alt="Qardhul Hasan: pembiayaan kebajikan untuk kebutuhan sosial produktif" loading="lazy">
-            </div>
-            <div class="tabungan-body">
-              <h3 id="qardhul-hasan-title" class="tabungan-title">Qardhul Hasan</h3>
-              <p class="tabungan-lead">Pembiayaan kebajikan tanpa imbal hasil; peminjam mengembalikan pokok. Diprioritaskan untuk kebutuhan sosial produktif/keadaan darurat.</p>
-
-              <!-- Persyaratan (disembunyikan default) -->
-              <div id="persyaratan-qardhul-hasan" class="persyaratan-pembiayaan">
-                <h4>Persyaratan Qardhul Hasan</h4>
-                <ul>
-                  <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
-                  <li>Surat keterangan kebutuhan dari lembaga terkait</li>
-                  <li>Proposal penggunaan dana</li>
-                  <li>Mengisi formulir aplikasi pembiayaan</li>
-                  <li>Jaminan sesuai kebijakan</li>
-                </ul>
-              </div>
-
-              <details class="tabungan-details" id="selengkapnya-qardhul-hasan">
-                <summary style="display:none;">Selengkapnya tentang Qardhul Hasan</summary>
-                <div class="tabungan-more">
-                  <h4>Ketentuan Pokok</h4>
-                  <ul>
-                    <li>Peruntukan jelas &amp; sesuai kriteria sosial internal KSPPS.</li>
-                    <li>Jangka waktu disepakati; dapat dilengkapi rahn bila diperlukan.</li>
-                    <li>Dorongan <em>tabarru'</em> (kebaikan); tidak ada margin, bagi hasil, maupun penalti bunga.</li>
-                  </ul>
-                  <p><em>Fatwa acuan:</em> DSN-MUI No. 19/DSN-MUI/IV/2001 (Al-Qardh).</p>
-                </div>
-              </details>
-
-              <div class="tabungan-actions">
-                <button type="button" class="tabungan-btn" onclick="const box = document.getElementById('persyaratan-qardhul-hasan'); 
-                  box.style.display = box.style.display === 'block' ? 'none' : 'block';
-                  this.textContent = box.style.display === 'block' ? 'Tutup Persyaratan' : 'Ajukan Pembiayaan';
-                ">
-                  Ajukan Pembiayaan
-                </button>
-                <button type="button" class="tabungan-btn--ghost" onclick="document.getElementById('selengkapnya-qardhul-hasan').open = !document.getElementById('selengkapnya-qardhul-hasan').open;">
-                  Selengkapnya
-                </button>
-              </div>
-            </div>
-          </article>
-
+      <!-- 3. Musyarakah -->
+      <article class="tabungan-card" role="listitem" aria-labelledby="musyarakah-title">
+        <div class="tabungan-media">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&auto=format&fit=crop&q=60"
+               alt="Ilustrasi pembiayaan Musyarakah" loading="lazy" class="tabungan-img">
         </div>
-      </div>
-    </section>
+        <div class="tabungan-body">
+          <h3 id="musyarakah-title" class="tabungan-title">Al-Musyarakah</h3>
+          <p class="tabungan-lead">Kerjasama modal antara koperasi dan anggota, hasil dibagi sesuai porsi modal/kerja. Cocok untuk usaha kolektif.</p>
+
+          <ul class="tabungan-highlights">
+            <li><strong>Kategori:</strong> Kerjasama modal</li>
+            <li><strong>Skema:</strong> Bagi hasil</li>
+            <li><strong>Fatwa:</strong> DSN-MUI No. 08/2000</li>
+          </ul>
+
+          <div id="persyaratan-musyarakah" style="display: none;">
+            <h4>Persyaratan</h4>
+            <ul>
+              <li>Proposal usaha kolektif</li>
+              <li>KTP semua anggota usaha</li>
+              <li>Pembagian modal jelas</li>
+            </ul>
+          </div>
+
+          <details class="tabungan-details" id="selengkapnya-musyarakah">
+            <summary style="display: none;">Selengkapnya tentang Al-Musyarakah</summary>
+            <div class="tabungan-more">
+              <h4>Pengertian</h4>
+              <p>Al-Musyarakah adalah akad kerjasama usaha dimana semua pihak memberikan kontribusi modal dan berbagi keuntungan/kerugian.</p>
+              <h4>Manfaat</h4>
+              <ul>
+                <li>Mendorong kebersamaan dalam usaha</li>
+                <li>Bagi hasil adil sesuai porsi</li>
+                <li>Menguatkan usaha skala kecil-menengah</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="tabungan-actions">
+            <button type="button" class="tabungan-btn"
+              onclick="const box = document.getElementById('persyaratan-musyarakah'); 
+                       box.style.display = box.style.display === 'block' ? 'none' : 'block';">
+              Cara Pengajuan
+            </button>
+            <button type="button" class="tabungan-btn--ghost"
+              onclick="const det = document.getElementById('selengkapnya-musyarakah');
+                       det.open = !det.open;
+                       this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
+              Selengkapnya
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Ijarah -->
+      <article class="tabungan-card" role="listitem" aria-labelledby="ijarah-title">
+        <div class="tabungan-media">
+          <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=1200&auto=format&fit=crop&q=60"
+               alt="Ilustrasi pembiayaan Ijarah" loading="lazy" class="tabungan-img">
+        </div>
+        <div class="tabungan-body">
+          <h3 id="ijarah-title" class="tabungan-title">Al-Ijarah</h3>
+          <p class="tabungan-lead">Akad sewa untuk penggunaan barang/jasa dalam waktu tertentu, dengan biaya sewa disepakati.</p>
+
+          <ul class="tabungan-highlights">
+            <li><strong>Kategori:</strong> Sewa</li>
+            <li><strong>Skema:</strong> Ujrah (fee sewa)</li>
+            <li><strong>Fatwa:</strong> DSN-MUI No. 09/2000</li>
+          </ul>
+
+          <div id="persyaratan-ijarah" style="display: none;">
+            <h4>Persyaratan</h4>
+            <ul>
+              <li>Identitas penyewa</li>
+              <li>Objek sewa jelas</li>
+              <li>Perjanjian waktu & biaya</li>
+            </ul>
+          </div>
+
+          <details class="tabungan-details" id="selengkapnya-ijarah">
+            <summary style="display: none;">Selengkapnya tentang Al-Ijarah</summary>
+            <div class="tabungan-more">
+              <h4>Pengertian</h4>
+              <p>Al-Ijarah adalah akad pemindahan hak guna barang/jasa dengan imbalan sewa (ujrah).</p>
+              <h4>Manfaat</h4>
+              <ul>
+                <li>Bisa akses barang tanpa harus membeli</li>
+                <li>Jangka waktu fleksibel</li>
+                <li>Proses jelas & sesuai syariah</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="tabungan-actions">
+            <button type="button" class="tabungan-btn"
+              onclick="const box = document.getElementById('persyaratan-ijarah'); 
+                       box.style.display = box.style.display === 'block' ? 'none' : 'block';">
+              Cara Pengajuan
+            </button>
+            <button type="button" class="tabungan-btn--ghost"
+              onclick="const det = document.getElementById('selengkapnya-ijarah');
+                       det.open = !det.open;
+                       this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
+              Selengkapnya
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Qardh -->
+      <article class="tabungan-card" role="listitem" aria-labelledby="qardh-title">
+        <div class="tabungan-media">
+          <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?w=1200&auto=format&fit=crop&q=60"
+               alt="Ilustrasi pembiayaan Qardh" loading="lazy" class="tabungan-img">
+        </div>
+        <div class="tabungan-body">
+          <h3 id="qardh-title" class="tabungan-title">Al-Qardh</h3>
+          <p class="tabungan-lead">Pinjaman kebajikan tanpa imbalan, untuk kebutuhan darurat anggota.</p>
+
+          <ul class="tabungan-highlights">
+            <li><strong>Kategori:</strong> Pinjaman kebajikan</li>
+            <li><strong>Skema:</strong> Tanpa margin</li>
+            <li><strong>Fatwa:</strong> DSN-MUI No. 19/2001</li>
+          </ul>
+
+          <div id="persyaratan-qardh" style="display: none;">
+            <h4>Persyaratan</h4>
+            <ul>
+              <li>Fotokopi KTP</li>
+              <li>Alasan kebutuhan darurat</li>
+              <li>Persetujuan pengurus</li>
+            </ul>
+          </div>
+
+          <details class="tabungan-details" id="selengkapnya-qardh">
+            <summary style="display: none;">Selengkapnya tentang Al-Qardh</summary>
+            <div class="tabungan-more">
+              <h4>Pengertian</h4>
+              <p>Al-Qardh adalah pinjaman kebajikan yang harus dikembalikan sama jumlahnya tanpa tambahan.</p>
+              <h4>Manfaat</h4>
+              <ul>
+                <li>Membantu kebutuhan darurat anggota</li>
+                <li>Ringan tanpa margin</li>
+                <li>Sesuai prinsip tolong-menolong</li>
+              </ul>
+            </div>
+          </details>
+
+          <div class="tabungan-actions">
+            <button type="button" class="tabungan-btn"
+              onclick="const box = document.getElementById('persyaratan-qardh'); 
+                       box.style.display = box.style.display === 'block' ? 'none' : 'block';">
+              Cara Pengajuan
+            </button>
+            <button type="button" class="tabungan-btn--ghost"
+              onclick="const det = document.getElementById('selengkapnya-qardh');
+                       det.open = !det.open;
+                       this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
+              Selengkapnya
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer class="kbms-footer" role="contentinfo">
