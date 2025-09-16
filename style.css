@@ -1163,6 +1163,19 @@ img {
     gap: 24px;
   }
 }
+@media (max-width: 767px) {
+  .tabungan-card {
+    grid-template-columns: 1fr;   /* jadi 1 kolom */
+  }
+
+  .tabungan-media {
+    order: -1; /* gambar tetap muncul di atas */
+  }
+
+  .tabungan-body {
+    padding: 16px;
+  }
+}
 
 /* Mobile kecil (≤ 480px) */
 @media (max-width: 480px) {
