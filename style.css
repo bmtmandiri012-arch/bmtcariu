@@ -1076,65 +1076,49 @@ img {
     margin-top: 10px;
   }
   
-  /* Nav default hidden */
-  .kbms-nav {
-    display: none;
-    flex-wrap: wrap;
-    gap: 5px;
-    background: transparent;
-    padding-left: 4px;
-  }
+ .kbms-nav {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(180deg, var(--kbms-brand-1), var(--kbms-brand-2));
+  border-radius: 8px;
+  margin-top: 12px;
+}
 
-  .kbms-nav a {
-    padding: 8px 12px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--kbms-white);
-    font-weight: 500;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-    background: transparent !important;
-  }
+.kbms-nav.is-open {
+  display: flex;
+}
 
-  .kbms-nav a:hover {
-    background: rgba(255, 255, 255, 0.14);
-    color: var(--kbms-accent);
-    transform: translateY(-1px);
-  }
+.kbms-nav a {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
 
-  .kbms-nav a.is-active {
-    background: rgba(255, 255, 255, 0.22);
-  }
+/* Tombol hamburger */
+.kbms-nav-toggle {
+  background: transparent;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  width: 32px;   /* cukup kecil */
+  height: 24px;  /* tinggi pas untuk 3 garis */
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0;
+}
 
-  /* Toggle hamburger */
-  .kbms-nav-toggle {
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-  }
-
-  .kbms-nav-toggle span {
-    display: block;
-    width: 26px;
-    height: 3px;
-    background: var(--kbms-white);
-    border-radius: 2px;
-  }
-
-  /* Mobile: tampilkan nav ketika is-open */
-  .kbms-nav.is-open {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background: linear-gradient(180deg, var(--kbms-brand-1), var(--kbms-brand-2));
-    padding: 12px;
-    border-radius: 8px;
-  }
+/* Garis-garis hamburger */
+.kbms-nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;                 /* <---- ini yang bikin garis kelihatan */
+  background: var(--kbms-white);
+  border-radius: 2px;
+}
 
   .about-content {
     grid-template-columns: 1fr;
