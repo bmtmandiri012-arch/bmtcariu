@@ -247,6 +247,7 @@ img {
   }
 
 .kbms-nav a:hover {
+  text-align: left;
   color: var(--kbms-accent);
   transform: translateY(-1px);
 }
