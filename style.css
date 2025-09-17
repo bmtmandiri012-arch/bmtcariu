@@ -228,6 +228,7 @@ img {
   background: transparent;
 }
 .kbms-nav a {
+  align-text: left;
   padding: 8px 12px;
   border-radius: 10px;
   text-decoration: none;
