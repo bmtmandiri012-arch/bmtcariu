@@ -241,17 +241,13 @@ img {
 }
  .kbms-nav-toggle span {
     display: block;
-    background: var(--kbms-white);
+    color: var(--kbms-white);
     border-radius: 2px;
   }
 
 .kbms-nav a:hover {
-  background: rgba(255, 255, 255, 0.14);
   color: var(--kbms-accent);
   transform: translateY(-1px);
-}
-.kbms-nav a.is-active {
-  background: rgba(255, 255, 255, 0.22);
 }
 
 /* =========================================================
