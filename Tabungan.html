@@ -17,7 +17,6 @@
 
   <link rel="icon" href="/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css?v=2">
   <script src="script.js?v=2" defer></script>
 
@@ -60,91 +59,112 @@
         <a href="#layanan">Layanan</a>
         <a href="Pembiayaan.html">Pembiayaan</a>
       </nav>
-
     </div>
   </header>
 
   <main id="kbms-main" tabindex="-1">
-    <section class="kbms-hero">
-      <div class="kbms-container kbms-hero__inner">
-        <div class="kbms-hero-content">
-          <h1>Produk Tabungan Kami</h1>
-          <p>Tabungan syariah yang mudah & terpercaya. Pilih produk sesuai tujuan: reguler (Sing Berkah), Paket Lebaran, Pendidikan, atau Qurban.</p>
-        </div>
+  <section class="kbms-hero">
+    <div class="kbms-container kbms-hero__inner">
+      <div class="kbms-hero-content">
+        <h1>Produk Tabungan Kami</h1>
+        <p>Tabungan syariah yang mudah & terpercaya. Pilih produk sesuai tujuan: reguler (Sing Berkah), Paket Lebaran, Pendidikan, atau Qurban.</p>
       </div>
-    </section>
-    <section class="tabungan-section" aria-labelledby="tabungan-title">
-      <div class="kbms-container">
-        <h2 id="tabungan-title">Pilihan Tabungan</h2>
-        <div class="tabungan-list" role="list">
-          <article class="tabungan-card" role="listitem" aria-labelledby="t-sing-berkah">
-            <div class="tabungan-media">
-              <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&auto=format&fit=crop&q=60" alt="Ilustrasi tabungan reguler" loading="lazy" class="tabungan-img">
+    </div>
+  </section>
+
+  <section class="tabungan-section" aria-labelledby="tabungan-title">
+    <div class="kbms-container">
+      <h2 id="tabungan-title">Pilihan Tabungan</h2>
+      <p class="tabungan-lead">Pilih produk sesuai kebutuhan. Klik tombol "Cara Buka Rekening" untuk menampilkan persyaratan, atau "Selengkapnya" untuk detail.</p>
+
+      <div class="tabungan-list" role="list">
+
+        <!-- Tabungan Reguler -->
+        <article class="tabungan-card" role="listitem" aria-labelledby="t-sing-berkah">
+          <div class="tabungan-media">
+            <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=1200&auto=format&fit=crop&q=60"
+                 alt="Ilustrasi tabungan reguler"
+                 loading="lazy"
+                 class="tabungan-img">
+          </div>
+
+          <div class="tabungan-body">
+            <h3 id="t-sing-berkah" class="tabungan-title">Tabungan Sing Berkah (Reguler)</h3>
+            <p class="tabungan-lead">Tabungan harian fleksibel untuk kebutuhan keluarga dan transaksi sehari-hari — aman, mudah, dan tanpa proses rumit.</p>
+
+            <ul class="tabungan-highlights">
+              <li><strong>Setoran Awal:</strong> Mulai Rp200.000</li>
+              <li><strong>Penarikan:</strong> Bebas kapan saja tanpa batas minimum</li>
+              <li><strong>Bagi Hasil:</strong> Kompetitif sesuai prinsip syariah</li>
+            </ul>
+
+            <!-- Persyaratan (tersembunyi, toggle nanti oleh JS) -->
+            <div id="persyaratan-sing-berkah" class="persyaratan-pembiayaan" style="display: none;" aria-hidden="true">
+              <h4>Cara Membuka Rekening</h4>
+              <ul>
+                <li>Biaya anggota Rp50.000</li>
+                <li>Setoran awal Rp200.000</li>
+                <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
+                <li>Isi formulir pendaftaran rekening</li>
+              </ul>
             </div>
-            <div class="tabungan-body">
-              <h3 id="t-sing-berkah" class="tabungan-title">Tabungan Sing Berkah (Reguler)</h3>
-              <p class="tabungan-lead">Tabungan harian fleksibel untuk kebutuhan keluarga dan transaksi sehari-hari — aman, mudah, dan tanpa proses rumit.</p>
-               <!-- ✅ Highlights -->
-    <ul class="tabungan-highlights">
-      <li><strong>Setoran Awal:</strong> Mulai Rp200.000</li>
-      <li><strong>Penarikan:</strong> Bebas kapan saja tanpa batas minimum</li>
-      <li><strong>Bagi Hasil:</strong> Kompetitif sesuai prinsip syariah</li>
-    </ul>
-    <!-- ✅ End Highlights -->
-              <div id="persyaratan-sing-berkah" style="display: none;">
-                <h4>Cara Membuka Rekening</h4>
+
+            <!-- Detail tambahan (konten ada di HTML agar SEO & fallback aman) -->
+            <details class="tabungan-details" id="selengkapnya-sing-berkah">
+              <summary>Selengkapnya</summary>
+              <div class="tabungan-more">
+                <h4>Pengertian Tabungan</h4>
+                <p>Tabungan Sing Berkah adalah produk tabungan berbasis syariah yang memberikan kemudahan untuk kebutuhan harian, dengan sistem bagi hasil sesuai prinsip syariah.</p>
+                <h4>Manfaat</h4>
                 <ul>
-                  <li>Biaya anggota Rp50.000</li>
-                  <li>Setoran awal Rp200.000</li>
-                  <li>Fotokopi KTP dan Kartu Keluarga (KK)</li>
-                  <li>Isi formulir pendaftaran rekening</li>
+                  <li>Bagi hasil kompetitif</li>
+                  <li>Mendukung kebutuhan harian</li>
+                  <li>Proses syariah yang transparan</li>
+                  <li>Akses layanan digital dan cabang</li>
+                </ul>
+                <h4>Fitur Tambahan</h4>
+                <ul>
+                  <li>Penarikan dana kapan saja tanpa batas minimum</li>
+                  <li>Laporan transaksi bulanan</li>
+                  <li>Kartu anggota untuk akses layanan eksklusif</li>
                 </ul>
               </div>
-              <details class="tabungan-details" id="selengkapnya-sing-berkah">
-                <summary style="display: none;">Selengkapnya tentang Tabungan Sing Berkah</summary>
-                <div class="tabungan-more">
-                  <h4>Pengertian Tabungan</h4>
-                  <p>Tabungan Sing Berkah adalah produk tabungan berbasis syariah yang memberikan kemudahan untuk kebutuhan harian, dengan sistem bagi hasil sesuai prinsip syariah.</p>
-                  <h4>Manfaat</h4>
-                  <ul>
-                    <li>Bagi hasil kompetitif berdasarkan prinsip syariah</li>
-                    <li>Mendukung kebutuhan harian dan simpanan darurat</li>
-                    <li>Proses syariah yang transparan</li>
-                    <li>Akses layanan digital dan cabang</li>
-                  </ul>
-                  <h4>Fitur Tambahan</h4>
-                  <ul>
-                    <li>Penarikan dana kapan saja tanpa batas minimum</li>
-                    <li>Laporan transaksi bulanan</li>
-                    <li>Kartu anggota untuk akses layanan eksklusif</li>
-                  </ul>
-                </div>
-              </details>
-              <div class="tabungan-actions">
-                <button type="button" class="tabungan-btn" onclick="const box = document.getElementById('persyaratan-sing-berkah'); 
-    box.style.display = box.style.display === 'block' ? 'none' : 'block';
-  ">
-                  Cara Buka Rekening
-                </button>
-                 <button type="button" class="tabungan-btn--ghost"
-        onclick="const det = document.getElementById('selengkapnya-sing-berkah');
-                 det.open = !det.open;
-                 this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
-        Selengkapnya
-                 </button>
-              </div>
+            </details>
+
+            <div class="tabungan-actions">
+              <button type="button"
+                      class="tabungan-btn"
+                      data-req-target="persyaratan-sing-berkah"
+                      aria-controls="persyaratan-sing-berkah"
+                      aria-expanded="false">
+                Cara Buka Rekening
+              </button>
+
+              <button type="button"
+                      class="tabungan-btn--ghost"
+                      data-details-target="selengkapnya-sing-berkah"
+                      aria-controls="selengkapnya-sing-berkah"
+                      aria-expanded="false">
+                Selengkapnya
+              </button>
             </div>
-          </article>
-          <article class="tabungan-card" role="listitem" aria-labelledby="t-lebaran">
+          </div>
+        </article>
+
+<!-- Tabungan Paket Lebaran -->
+<article class="tabungan-card" role="listitem" aria-labelledby="t-lebaran">
   <div class="tabungan-media">
-    <img src="https://images.unsplash.com/photo-1600180758890-1f9e86f7a1ee?w=1200&auto=format&fit=crop&q=60" 
-         alt="Ilustrasi tabungan lebaran" 
-         loading="lazy" 
+    <img src="https://images.unsplash.com/photo-1600180758890-1f9e86f7a1ee?w=1200&auto=format&fit=crop&q=60"
+         alt="Ilustrasi tabungan lebaran"
+         loading="lazy"
          class="tabungan-img">
   </div>
+
   <div class="tabungan-body">
     <h3 id="t-lebaran" class="tabungan-title">Tabungan Paket Lebaran</h3>
-    <p class="tabungan-lead">Rencanakan dana Idul Fitri dengan setoran berkala — tersedia paket harian/bulanan yang membantu mencapai target.</p>
+    <p class="tabungan-lead">
+      Rencanakan dana Idul Fitri dengan setoran berkala — tersedia paket harian/bulanan untuk mencapai target.
+    </p>
 
     <!-- Highlights -->
     <ul class="tabungan-highlights">
@@ -152,8 +172,8 @@
       <li><strong>Pencairan:</strong> Dipercepat menjelang Idul Fitri</li>
     </ul>
 
-    <!-- Persyaratan (disembunyikan default) -->
-    <div id="persyaratan-lebaran" style="display: none;">
+    <!-- Persyaratan -->
+    <div id="persyaratan-lebaran" class="persyaratan-pembiayaan" style="display: none;" aria-hidden="true">
       <h4>Cara Ikut Paket Lebaran</h4>
       <ul>
         <li>Menjadi anggota KSPPS BMS</li>
@@ -163,172 +183,226 @@
       </ul>
     </div>
 
-    <!-- Detail tambahan -->
+    <!-- Selengkapnya -->
     <details class="tabungan-details" id="selengkapnya-lebaran">
-      <summary style="display:none;">Selengkapnya tentang Tabungan Paket Lebaran</summary>
+      <summary style="display: none;">Selengkapnya tentang Tabungan Paket Lebaran</summary>
       <div class="tabungan-more">
+        <h4>Pengertian Tabungan</h4>
+        <p>
+          Tabungan Paket Lebaran adalah program simpanan berjangka khusus yang dirancang 
+          untuk membantu anggota mempersiapkan kebutuhan Hari Raya Idul Fitri. 
+          Dengan setoran rutin (harian/bulanan), anggota dapat merencanakan dana secara 
+          terukur sehingga kebutuhan belanja lebaran dapat terpenuhi tanpa beban mendadak.
+        </p>
+
         <h4>Manfaat</h4>
         <ul>
           <li>Target terukur untuk biaya lebaran</li>
-          <li>Rencana setoran otomatis (opsional)</li>
-          <li>Pilihan tenor yang fleksibel</li>
+          <li>Pilihan tenor fleksibel sesuai kemampuan</li>
+          <li>Tabungan aman dan sesuai prinsip syariah</li>
+          <li>Membantu menghindari pengeluaran mendadak menjelang lebaran</li>
         </ul>
+
         <h4>Fitur Tambahan</h4>
         <ul>
-          <li>Tabungan aman berbasis syariah</li>
           <li>Pencairan otomatis menjelang Idul Fitri</li>
           <li>Notifikasi pengingat setoran</li>
+          <li>Opsi penyesuaian nominal setoran di tengah periode</li>
+          <li>Bisa digabung dengan program tabungan lain untuk keluarga</li>
         </ul>
       </div>
     </details>
 
-    <!-- Tombol -->
+    <!-- Tombol Aksi -->
     <div class="tabungan-actions">
-      <button type="button" class="tabungan-btn" 
-        onclick="const box = document.getElementById('persyaratan-lebaran');
-                 box.style.display = box.style.display === 'block' ? 'none' : 'block';">
-
-        
+      <button type="button"
+              class="tabungan-btn"
+              data-req-target="persyaratan-lebaran"
+              aria-controls="persyaratan-lebaran"
+              aria-expanded="false">
         Pilih Paket
       </button>
-       <button type="button" class="tabungan-btn--ghost"
-        onclick="const det = document.getElementById('selengkapnya-lebaran');
-                 det.open = !det.open;
-                 this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
+
+      <button type="button"
+              class="tabungan-btn--ghost"
+              data-details-target="selengkapnya-lebaran"
+              aria-controls="selengkapnya-lebaran"
+              aria-expanded="false">
         Selengkapnya
       </button>
     </div>
   </div>
 </article>
 
-          <article class="tabungan-card" role="listitem" aria-labelledby="t-pendidikan">
+<!-- Tabungan Pendidikan -->
+<article class="tabungan-card" role="listitem" aria-labelledby="t-pendidikan">
   <div class="tabungan-media">
-    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&auto=format&fit=crop&q=60" 
-         alt="Ilustrasi tabungan pendidikan" 
-         loading="lazy" 
+    <img src="https://images.unsplash.com/photo-1588075592446-270efdf2b579?w=1200&auto=format&fit=crop&q=60"
+         alt="Ilustrasi tabungan pendidikan"
+         loading="lazy"
          class="tabungan-img">
   </div>
+
   <div class="tabungan-body">
     <h3 id="t-pendidikan" class="tabungan-title">Tabungan Pendidikan</h3>
-    <p class="tabungan-lead">Mempersiapkan biaya pendidikan anak secara terencana — aman & sesuai prinsip syariah.</p>
+    <p class="tabungan-lead">
+      Simpanan khusus untuk biaya sekolah, kuliah, maupun pelatihan dengan setoran berkala dan pencairan sesuai kebutuhan pendidikan.
+    </p>
 
     <!-- Highlights -->
     <ul class="tabungan-highlights">
-      <li><strong>Rekomendasi setoran:</strong> Mulai Rp100.000 / bulan</li>
-      <li><strong>Fleksibilitas:</strong> Jangka & jumlah disesuaikan</li>
+      <li><strong>Tujuan:</strong> Biaya sekolah, kuliah, atau kursus</li>
+      <li><strong>Setoran:</strong> Fleksibel (harian / bulanan)</li>
     </ul>
 
-    <!-- Persyaratan (disembunyikan default) -->
-    <div id="persyaratan-pendidikan" style="display: none;">
+    <!-- Persyaratan -->
+    <div id="persyaratan-pendidikan" class="persyaratan-pembiayaan" style="display: none;" aria-hidden="true">
       <h4>Cara Membuka Tabungan Pendidikan</h4>
       <ul>
         <li>Menjadi anggota KSPPS BMS</li>
-        <li>Fotokopi KTP wali & Kartu Keluarga</li>
-        <li>Mengisi formulir pendaftaran tabungan pendidikan</li>
-        <li>Setoran awal minimal Rp100.000</li>
+        <li>Fotokopi KTP & Kartu Keluarga</li>
+        <li>Mengisi formulir tabungan pendidikan</li>
+        <li>Setoran awal sesuai ketentuan</li>
       </ul>
     </div>
 
-    <!-- Detail tambahan -->
+    <!-- Selengkapnya -->
     <details class="tabungan-details" id="selengkapnya-pendidikan">
-      <summary style="display:none;">Selengkapnya tentang Tabungan Pendidikan</summary>
+      <summary style="display: none;">Selengkapnya tentang Tabungan Pendidikan</summary>
       <div class="tabungan-more">
+        <h4>Pengertian Tabungan</h4>
+        <p>
+          Tabungan Pendidikan adalah program simpanan berjangka untuk membantu orang tua maupun mahasiswa 
+          mempersiapkan dana pendidikan secara terencana. Dengan sistem setoran rutin, dana pendidikan akan tersedia 
+          ketika dibutuhkan tanpa harus mencari pinjaman mendadak.
+        </p>
+
         <h4>Manfaat</h4>
         <ul>
-          <li>Rencana tabungan terarah untuk kebutuhan sekolah atau kuliah</li>
-          <li>Catatan perkembangan & saran paket sesuai target biaya</li>
-          <li>Fleksibilitas setoran (harian / mingguan / bulanan)</li>
+          <li>Membantu merencanakan biaya sekolah dan kuliah</li>
+          <li>Setoran fleksibel sesuai kemampuan anggota</li>
+          <li>Penarikan dana sesuai kebutuhan pendidikan</li>
+          <li>Menumbuhkan budaya menabung sejak dini</li>
         </ul>
+
         <h4>Fitur Tambahan</h4>
         <ul>
-          <li>Laporan perkembangan tabungan berkala</li>
-          <li>Konsultasi keuangan pendidikan dengan petugas</li>
+          <li>Notifikasi pengingat jadwal setoran</li>
+          <li>Rekening dapat dijadikan jaminan ringan untuk pembiayaan pendidikan</li>
+          <li>Opsi autodebet dari tabungan reguler</li>
+          <li>Bisa digunakan untuk biaya kursus atau pelatihan non-formal</li>
         </ul>
       </div>
     </details>
 
-    <!-- Tombol -->
+    <!-- Tombol Aksi -->
     <div class="tabungan-actions">
-      <button type="button" class="tabungan-btn"
-        onclick="const box = document.getElementById('persyaratan-pendidikan');
-                 box.style.display = box.style.display === 'block' ? 'none' : 'block';">
-        Mulai Menabung
+      <button type="button"
+              class="tabungan-btn"
+              data-req-target="persyaratan-pendidikan"
+              aria-controls="persyaratan-pendidikan"
+              aria-expanded="false">
+        Buka Tabungan
       </button>
-       <button type="button" class="tabungan-btn--ghost"
-        onclick="const det = document.getElementById('selengkapnya-pendidikan');
-                 det.open = !det.open;
-                 this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
-         Selengkapnya
-       </button>
-    </div>
-  </div>
-</article>
-    
- <article class="tabungan-card" role="listitem" aria-labelledby="t-qurban">
-  <div class="tabungan-media">
-    <img src="https://images.unsplash.com/photo-1603642633278-9a2b4b3c7f0d?w=1200&auto=format&fit=crop&q=60" 
-         alt="Ilustrasi tabungan qurban" 
-         loading="lazy" 
-         class="tabungan-img">
-  </div>
-  <div class="tabungan-body">
-    <h3 id="t-qurban" class="tabungan-title">Tabungan Qurban</h3>
-    <p class="tabungan-lead">Targetkan hewan qurban dengan setoran rutin — pencairan & distribusi terorganisir saat Idul Adha.</p>
 
-    <!-- Highlights -->
-    <ul class="tabungan-highlights">
-      <li><strong>Target:</strong> Sesuaikan dengan paket hewan</li>
-      <li><strong>Distribusi:</strong> Dikelola oleh BMT saat Idul Adha</li>
-    </ul>
-
-    <!-- Persyaratan (disembunyikan default) -->
-    <div id="persyaratan-qurban" style="display: none;">
-      <h4>Cara Membuka Tabungan Qurban</h4>
-      <ul>
-        <li>Menjadi anggota KSPPS BMS</li>
-        <li>Fotokopi KTP</li>
-        <li>Mengisi formulir pendaftaran tabungan qurban</li>
-        <li>Setoran awal sesuai paket hewan (misalnya kambing atau sapi)</li>
-      </ul>
-    </div>
-
-    <!-- Detail tambahan -->
-    <details class="tabungan-details" id="selengkapnya-qurban">
-      <summary style="display:none;">Selengkapnya tentang Tabungan Qurban</summary>
-      <div class="tabungan-more">
-        <h4>Manfaat</h4>
-        <ul>
-          <li>Membantu persiapan dana qurban secara terencana</li>
-          <li>Menjamin distribusi hewan qurban transparan & tepat sasaran</li>
-          <li>Fleksibilitas pilihan paket hewan (kambing, sapi, dll)</li>
-        </ul>
-        <h4>Fitur Tambahan</h4>
-        <ul>
-          <li>Pilihan setoran bulanan sesuai target hewan</li>
-          <li>Bantuan pengelolaan dan pendistribusian oleh BMT</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- Tombol -->
-    <div class="tabungan-actions">
-      <button type="button" class="tabungan-btn"
-        onclick="const box = document.getElementById('persyaratan-qurban');
-                 box.style.display = box.style.display === 'block' ? 'none' : 'block';">
-        Rencanakan Qurban
-      </button>
-      <button type="button" class="tabungan-btn--ghost"
-        onclick="const det = document.getElementById('selengkapnya-qurban');
-                 det.open = !det.open;
-                 this.textContent = det.open ? 'Tutup' : 'Selengkapnya';">
+      <button type="button"
+              class="tabungan-btn--ghost"
+              data-details-target="selengkapnya-pendidikan"
+              aria-controls="selengkapnya-pendidikan"
+              aria-expanded="false">
         Selengkapnya
       </button>
     </div>
-  </div> 
+  </div>
 </article>
 
-        </section>
-  </main>
+<!-- Tabungan Qurban -->
+<article class="tabungan-card" role="listitem" aria-labelledby="t-qurban">
+  <div class="tabungan-media">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=60"
+         alt="Ilustrasi tabungan qurban"
+         loading="lazy"
+         class="tabungan-img">
+  </div>
+
+  <div class="tabungan-body">
+    <h3 id="t-qurban" class="tabungan-title">Tabungan Qurban</h3>
+    <p class="tabungan-lead">
+      Program simpanan syariah untuk mempersiapkan ibadah qurban dengan setoran rutin dan pencairan menjelang Idul Adha.
+    </p>
+
+    <!-- Highlights -->
+    <ul class="tabungan-highlights">
+      <li><strong>Tujuan:</strong> Persiapan dana ibadah qurban</li>
+      <li><strong>Setoran:</strong> Fleksibel (harian / bulanan)</li>
+    </ul>
+
+    <!-- Persyaratan -->
+    <div id="persyaratan-qurban" class="persyaratan-pembiayaan" style="display: none;" aria-hidden="true">
+      <h4>Cara Membuka Tabungan Qurban</h4>
+      <ul>
+        <li>Menjadi anggota KSPPS BMS</li>
+        <li>Fotokopi KTP / identitas resmi</li>
+        <li>Mengisi formulir tabungan qurban</li>
+        <li>Setoran awal sesuai ketentuan</li>
+      </ul>
+    </div>
+
+    <!-- Selengkapnya -->
+    <details class="tabungan-details" id="selengkapnya-qurban">
+      <summary style="display: none;">Selengkapnya tentang Tabungan Qurban</summary>
+      <div class="tabungan-more">
+        <h4>Pengertian Tabungan</h4>
+        <p>
+          Tabungan Qurban adalah program simpanan khusus untuk membantu anggota mempersiapkan dana qurban 
+          secara terencana. Dengan setoran rutin, dana akan tersedia menjelang Idul Adha tanpa beban mendadak.
+        </p>
+
+        <h4>Manfaat</h4>
+        <ul>
+          <li>Meringankan persiapan ibadah qurban</li>
+          <li>Setoran dapat disesuaikan dengan kemampuan</li>
+          <li>Amanah dan dikelola sesuai prinsip syariah</li>
+          <li>Mempermudah perencanaan keuangan keluarga</li>
+        </ul>
+
+        <h4>Fitur Tambahan</h4>
+        <ul>
+          <li>Pencairan otomatis sebelum Idul Adha</li>
+          <li>Pengingat jadwal setoran</li>
+          <li>Bisa digabung dengan tabungan keluarga</li>
+          <li>Fleksibilitas tenor tabungan sesuai kebutuhan</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- Tombol Aksi -->
+    <div class="tabungan-actions">
+      <button type="button"
+              class="tabungan-btn"
+              data-req-target="persyaratan-qurban"
+              aria-controls="persyaratan-qurban"
+              aria-expanded="false">
+        Buka Tabungan
+      </button>
+
+      <button type="button"
+              class="tabungan-btn--ghost"
+              data-details-target="selengkapnya-qurban"
+              aria-controls="selengkapnya-qurban"
+              aria-expanded="false">
+        Selengkapnya
+      </button>
+    </div>
+  </div>
+</article>
+        
+      </div>
+    </div>
+  </section>
+</main>
+
+
   <footer class="kbms-footer" role="contentinfo">
     <div class="kbms-container kbms-footer__inner">
       <div>
