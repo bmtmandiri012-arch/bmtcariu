@@ -997,7 +997,7 @@ img {
 /* Desktop (≥ 1025px) */
 @media (min-width: 1025px) {
   .kbms-brand > div {
-  margin-top: 5px;
+  margin-top: 2.5px;
   min-width: 0;
   display: flex;
   flex-direction: column;
