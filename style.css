@@ -131,7 +131,6 @@ img {
 }
 
 .kbms-brand > div {
-  margin-top: 5px;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -997,7 +996,6 @@ img {
 /* Desktop (≥ 1025px) */
 @media (min-width: 1025px) {
   .kbms-brand > div {
-  margin-top: 2.5px;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -1027,7 +1025,6 @@ img {
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   .kbms-brand > div {
-  margin-top: 5px;
   min-width: 0;
   display: flex;
   flex-direction: column;
