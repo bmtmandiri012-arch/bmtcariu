@@ -506,6 +506,150 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  // ---------- TABUNGAN SECTION (enhanced, data-driven) ----------
+(function () {
+  // Cari tombol yang menggunakan data-attributes
+  const reqButtons = document.querySelectorAll('[data-req-target]');
+  const detailButtons = document.querySelectorAll('[data-details-target]');
+  const detailsList = document.querySelectorAll('.tabungan-details');
+  const persyaratanPanels = document.querySelectorAll('.persyaratan-pembiayaan');
+
+  // Map id -> tombol untuk sinkronisasi cepat
+  const reqButtonMap = new Map();
+  reqButtons.forEach((btn) => {
+    const id = btn.dataset.reqTarget;
+    if (id) reqButtonMap.set(id, btn);
+    btn.setAttribute('aria-expanded', 'false');
+  });
+
+  const detailsButtonMap = new Map();
+  detailButtons.forEach((btn) => {
+    const id = btn.dataset.detailsTarget;
+    if (id) detailsButtonMap.set(id, btn);
+    btn.setAttribute('aria-expanded', 'false');
+    // Pastikan tombol punya label yang konsisten (fallback)
+    if (!btn.textContent.trim()) btn.textContent = 'Selengkapnya';
+  });
+
+  // Pastikan persyaratan tersembunyi dan atribut aksesibilitas konsisten pada init
+  persyaratanPanels.forEach((panel) => {
+    // jika css sudah hide, kita biarkan; tapi set aria-hidden dan data-open untuk konsistensi
+    const computed = window.getComputedStyle(panel);
+    if (computed.display !== 'none') {
+      panel.style.display = 'none';
+    }
+    panel.setAttribute('aria-hidden', 'true');
+    panel.dataset.open = 'false';
+  });
+
+  // Tutup semua persyaratan kecuali yang diberikan (optional)
+  function closeAllPersyaratan(exceptId) {
+    persyaratanPanels.forEach((panel) => {
+      const id = panel.id;
+      if (!id) return;
+      if (exceptId && id === exceptId) return;
+      panel.style.display = 'none';
+      panel.setAttribute('aria-hidden', 'true');
+      panel.dataset.open = 'false';
+      const btn = reqButtonMap.get(id);
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  // Handler toggle untuk tombol "Cara Buka Rekening / Pilih Paket / dll"
+  reqButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = btn.dataset.reqTarget;
+      if (!targetId) return;
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+
+      const isOpen = panel.dataset.open === 'true' || panel.style.display === 'block';
+      if (isOpen) {
+        // close
+        panel.style.display = 'none';
+        panel.setAttribute('aria-hidden', 'true');
+        panel.dataset.open = 'false';
+        btn.setAttribute('aria-expanded', 'false');
+      } else {
+        // close others first, then open this
+        closeAllPersyaratan(targetId);
+        panel.style.display = 'block';
+        panel.setAttribute('aria-hidden', 'false');
+        panel.dataset.open = 'true';
+        btn.setAttribute('aria-expanded', 'true');
+        // bawa sedikit ke view jika perlu (user-friendly)
+        try {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } catch (err) {}
+      }
+    });
+  });
+
+  // Tutup semua details selain yang sedang dibuka
+  function closeOtherDetails(openingDetail) {
+    detailsList.forEach((d) => {
+      if (d === openingDetail) return;
+      if (d.open) d.open = false;
+      const btn = detailsButtonMap.get(d.id);
+      if (btn) {
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Selengkapnya';
+      }
+    });
+  }
+
+  // Sinkronisasi saat <details> berubah (jika user klik <summary>)
+  detailsList.forEach((det) => {
+    // Pastikan id ada agar mapping tombol berfungsi
+    if (!det.id) return;
+    det.addEventListener('toggle', () => {
+      // Jika dibuka, tutup yang lain (accordion)
+      if (det.open) {
+        closeOtherDetails(det);
+      }
+      // Update tombol terkait (jika ada)
+      const btn = detailsButtonMap.get(det.id);
+      if (btn) {
+        btn.setAttribute('aria-expanded', det.open ? 'true' : 'false');
+        btn.textContent = det.open ? 'Tutup' : 'Selengkapnya';
+      }
+    });
+  });
+
+  // Tombol eksternal untuk membuka/tutup <details>
+  detailButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = btn.dataset.detailsTarget;
+      if (!id) return;
+      const det = document.getElementById(id);
+      if (!det) return;
+
+      det.open = !det.open;
+      // toggle event pada <details> akan meng-update teks & aria; tapi set langsung agar responsif
+      btn.setAttribute('aria-expanded', det.open ? 'true' : 'false');
+      btn.textContent = det.open ? 'Tutup' : 'Selengkapnya';
+      if (det.open) closeOtherDetails(det);
+      try {
+        if (det.open) det.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } catch (err) {}
+    });
+  });
+
+  // Fallback: tombol aksi lain di .tabungan-actions yang tidak memakai data-attributes
+  // (agar perilaku lama tidak hilang; ini hanya untuk tombol tanpa data-*).
+  const fallbackActionBtns = document.querySelectorAll('.tabungan-actions button:not([data-req-target]):not([data-details-target])');
+  fallbackActionBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      // sederhana: alert (sama seperti sebelumnya). Anda bisa menggantinya ke modal/redirect.
+      const txt = btn.textContent.trim() || 'Aksi';
+      alert(`Anda memilih: ${txt}`);
+    });
+  });
+})();
+
 
   // ---------- FOOTER YEAR ----------
   const yearEl = document.getElementById("year");
