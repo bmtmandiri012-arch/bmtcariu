@@ -863,7 +863,7 @@ img {
 .tabungan-details summary {
   cursor: pointer;
   list-style: none;
-  display: inline-block;
+  display: none;
   font-weight: 600;
   padding: 6px 8px;
   border-radius: 8px;
