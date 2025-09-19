@@ -131,6 +131,7 @@ img {
 }
 
 .kbms-brand > div {
+  margin-top: 5px;
   min-width: 0;
   display: flex;
   flex-direction: column;
