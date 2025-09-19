@@ -996,6 +996,13 @@ img {
 
 /* Desktop (≥ 1025px) */
 @media (min-width: 1025px) {
+  .kbms-brand > div {
+  margin-top: 5px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
   .kbms-header__top {
     display: flex;
     justify-content: space-between;
@@ -1019,6 +1026,13 @@ img {
 
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
+  .kbms-brand > div {
+  margin-top: 5px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1044,6 +1058,13 @@ img {
 
 /* Mobile (≤ 767px) - Fokus pada perbaikan untuk 720px */
 @media (max-width: 767px) {
+  .kbms-brand > div {
+  margin-top: 5px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
   .kbms-container {
     padding-left: 15px;
     padding-right: 15px;
@@ -1178,6 +1199,7 @@ img {
 
 /* Mobile kecil (≤ 480px) */
 @media (max-width: 480px) {
+  
   .kbms-brand__title {
     font-size: 1rem;
   }
