@@ -372,7 +372,7 @@ img {
 }
 
 .feature-icon {
-  font-size: 2.7rem;
+  font-size: 2.6rem;
   margin-bottom: 15px;
   color: #0d5e2a;
   line-height: 1;
@@ -1034,7 +1034,7 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
   .feature-icon {
-  font-size: 2.7rem;
+  font-size: 2.6rem;
   margin-bottom: 10px;
   color: #0d5e2a;
   line-height: 1;
